@@ -1,0 +1,5 @@
+
+         
+
+         
+{"id":"gen-1780653321-t4eqwQtJDth4XNF688t8","object":"chat.completion","created":1780653321,"model":"google/gemini-3-flash-preview-20251217","provider":"Google","system_fingerprint":null,"service_tier":"default","choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"STOP","message":{"role":"assistant","content":"LD X\nORN Y\nST A","refusal":null,"reasoning":null,"reasoning_details":[{"type":"reasoning.encrypted","data":"AY89a1+f0sraI03FkqYPQKncEgiDoXU0bN6AjGQlibrHytFKivrc1i2ZVwzVs1d78xA=","format":"google-gemini-v1","index":0}]}}],"usage":{"prompt_tokens":3073,"completion_tokens":8,"total_tokens":3081,"cost":0.0015605,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.0015605,"upstream_inference_prompt_cost":0.0015365,"upstream_inference_completions_cost":0.000024},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

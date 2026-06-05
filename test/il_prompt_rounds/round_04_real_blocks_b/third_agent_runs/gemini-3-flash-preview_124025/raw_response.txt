@@ -1,0 +1,9 @@
+
+         
+
+         
+
+         
+
+         
+{"id":"gen-1780652518-9hKyX5JoVSNtmBKvgEV0","object":"chat.completion","created":1780652518,"model":"google/gemini-3-flash-preview-20251217","provider":"Google","system_fingerprint":null,"service_tier":"default","choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"STOP","message":{"role":"assistant","content":"LDN _MxIsBd\nAND LS0\nAND _EVlv\nAND _C2InMx\nANDN _MxIsFn\nS MxIsBd\nLD _MxIsBd\nANDN LS0\nR MxIsBd","refusal":null,"reasoning":null,"reasoning_details":[{"type":"reasoning.encrypted","data":"AY89a1/2JKfB7i1lBmmWkPJseLpBt3uHW/lCHsOkP6V0k4QzLoO/FoLhDt3c/26Grlo=","format":"google-gemini-v1","index":0}]}}],"usage":{"prompt_tokens":3127,"completion_tokens":50,"total_tokens":3177,"cost":0.0017135,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.0017135,"upstream_inference_prompt_cost":0.0015635,"upstream_inference_completions_cost":0.00015},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

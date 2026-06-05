@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780478276-bk8g06ev11rOgZH84Zig",
+  "object": "chat.completion",
+  "created": 1780478276,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": "Let me analyze the source ST program:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\nThis is a single assignment with a complex boolean expression.\n\nExpression breakdown:\n- Top level: TS AND ((SysOn AND TP3) OR SBSink)\n- This is an AND of two operands:\n  1. TS\n  2. ((SysOn AND TP3) OR SBSink) - which is an OR of:\n    a. (SysOn AND TP3) - which is an AND of SysOn and TP3\n    b. SBSink\n\nSo the structure is:\nLD_AND with 2 operands:\n  - LD_CONTACT: TS (positive)\n  - LD_OR with 2 operands:\n    - LD_AND with 2 operands:\n      - LD_CONTACT: SysOn (positive)\n      - LD_CONTACT: TP3 (positive)\n    - LD_CONTACT: SBSink (positive)\n\nThis is one network, one direct assignment.\n\nLet me construct the LD export:\n\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\n\nWait, let me look at the reference example more carefully to understand the expression closing pattern.\n\nIn the reference:\n```\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nX\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nZ\n_EXPRESSION\n_NEGATIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nSo after each contact inside an AND/OR, there's `_EXPRESSION` and polarity. Then after the AND block closes, there's `_EXPRESSION` and `_POSITIV`. Then after the whole expression, another `_EXPRESSION` and `_POSITIV`.\n\nLet me trace through the reference:\n- _LD_AND opens (operator with 2 operands)\n  - _LD_CONTACT X, _EXPRESSION, _POSITIV (first operand)\n  - _LD_CONTACT Z, _EXPRESSION, _NEGATIV (second operand)\n- _EXPRESSION, _POSITIV (closes the AND)\n- _EXPRESSION, _POSITIV (closes the overall expression before ENABLELIST)\n\nSo the pattern is:\n- Each contact gets _EXPRESSION and its polarity\n- Each operator block gets _EXPRESSION and _POSITIV when it closes\n- The overall expression gets _EXPRESSION and _POSITIV before ENABLELIST\n\nFor nested structures, each closing of a sub-block adds _EXPRESSION _POSITIV.\n\nLet me redo my network:\n\n_LD_AND (2 operands)\n  _LD_CONTACT TS, _EXPRESSION, _POSITIV\n  _LD_OR (2 operands)\n    _LD_AND (2 operands)\n      _LD_CONTACT SysOn, _EXPRESSION, _POSITIV\n      _LD_CONTACT TP3, _EXPRESSION, _POSITIV\n    _EXPRESSION, _POSITIV  (closes inner _LD_AND)\n    _LD_CONTACT SBSink, _EXPRESSION, _POSITIV\n  _EXPRESSION, _POSITIV  (closes _LD_OR)\n_EXPRESSION, _POSITIV  (closes outer _LD_AND)\n_EXPRESSION, _POSITIV  (closes overall expression)\n\nThat looks right. Let me write it out.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "Let me analyze the source ST program:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\nThis is a single assignment with a complex boolean expression.\n\nExpression breakdown:\n- Top level: TS AND ((SysOn AND TP3) OR SBSink)\n- This is an AND of two operands:\n  1. TS\n  2. ((SysOn AND TP3) OR SBSink) - which is an OR of:\n    a. (SysOn AND TP3) - which is an AND of SysOn and TP3\n    b. SBSink\n\nSo the structure is:\nLD_AND with 2 operands:\n  - LD_CONTACT: TS (positive)\n  - LD_OR with 2 operands:\n    - LD_AND with 2 operands:\n      - LD_CONTACT: SysOn (positive)\n      - LD_CONTACT: TP3 (positive)\n    - LD_CONTACT: SBSink (positive)\n\nThis is one network, one direct assignment.\n\nLet me construct the LD export:\n\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\n\nWait, let me look at the reference example more carefully to understand the expression closing pattern.\n\nIn the reference:\n```\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nX\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nZ\n_EXPRESSION\n_NEGATIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nSo after each contact inside an AND/OR, there's `_EXPRESSION` and polarity. Then after the AND block closes, there's `_EXPRESSION` and `_POSITIV`. Then after the whole expression, another `_EXPRESSION` and `_POSITIV`.\n\nLet me trace through the reference:\n- _LD_AND opens (operator with 2 operands)\n  - _LD_CONTACT X, _EXPRESSION, _POSITIV (first operand)\n  - _LD_CONTACT Z, _EXPRESSION, _NEGATIV (second operand)\n- _EXPRESSION, _POSITIV (closes the AND)\n- _EXPRESSION, _POSITIV (closes the overall expression before ENABLELIST)\n\nSo the pattern is:\n- Each contact gets _EXPRESSION and its polarity\n- Each operator block gets _EXPRESSION and _POSITIV when it closes\n- The overall expression gets _EXPRESSION and _POSITIV before ENABLELIST\n\nFor nested structures, each closing of a sub-block adds _EXPRESSION _POSITIV.\n\nLet me redo my network:\n\n_LD_AND (2 operands)\n  _LD_CONTACT TS, _EXPRESSION, _POSITIV\n  _LD_OR (2 operands)\n    _LD_AND (2 operands)\n      _LD_CONTACT SysOn, _EXPRESSION, _POSITIV\n      _LD_CONTACT TP3, _EXPRESSION, _POSITIV\n    _EXPRESSION, _POSITIV  (closes inner _LD_AND)\n    _LD_CONTACT SBSink, _EXPRESSION, _POSITIV\n  _EXPRESSION, _POSITIV  (closes _LD_OR)\n_EXPRESSION, _POSITIV  (closes outer _LD_AND)\n_EXPRESSION, _POSITIV  (closes overall expression)\n\nThat looks right. Let me write it out.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1722,
+    "completion_tokens": 994,
+    "total_tokens": 2716,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1664,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 780,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

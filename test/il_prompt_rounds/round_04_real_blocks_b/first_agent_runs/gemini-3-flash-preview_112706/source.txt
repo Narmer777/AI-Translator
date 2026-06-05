@@ -1,0 +1,3 @@
+IF NOT _MtrErr AND NOT MS AND (MtrTmr.Q OR _Mtr AND _MS) THEN MtrErr:=1;
+ELSIF  _MtrErr AND PBStop                                THEN MtrErr:=0;
+END_IF;

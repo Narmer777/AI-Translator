@@ -1,0 +1,3 @@
+IF NOT _C1InMx AND     LS0 AND _Vlv1 AND _TS1 THEN C1InMx:=1;
+ELSIF  _C1InMx AND NOT LS0                    THEN C1InMx:=0;
+END_IF;

@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780475987-bOy1MoPBMNZd7LPtbGeh",
+  "object": "chat.completion",
+  "created": 1780475987,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD SBEVlv\nST EVlv",
+        "refusal": null,
+        "reasoning": "\nLet me analyze the source program:\n\n```\nEVlv:=SBEVlv;\n```\n\nThis is a simple assignment statement where the value of `SBEVlv` is assigned to `EVlv`.\n\nAccording to the grammar:\n- This is an assignment statement: `<identifier> \":=\" <expression> \";\"`\n- The identifier on the left is `EVlv`\n- The expression on the right is `SBEVlv` (which is just an identifier)\n- The statement ends with a semicolon\n\nFor assignments, the translation requirement is:\n- Evaluate the expression and store the final accumulator value with `ST <identifier>`\n\nSo the IL translation should be:\n1. Load the value of `SBEVlv` into the accumulator: `LD SBEVlv`\n2. Store the accumulator value into `EVlv`: `ST EVlv`\n\nLet me double-check against the requirements:\n- I'm not using any jumps or labels ✓\n- I'm using the correct IL instructions (LD and ST) ✓\n- I'm preserving the exact identifiers as they appear in the source ✓\n- I'm not echoing ST syntax in the output ✓\n- I'm not using any forbidden tokens ✓\n- I'm following the one instruction per line rule ✓\n\nSo the final IL translation is:\n\n```\nLD SBEVlv\nST EVlv\n```\n\nThis is a straightforward translation with no complex expressions or control flow structures.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me analyze the source program:\n\n```\nEVlv:=SBEVlv;\n```\n\nThis is a simple assignment statement where the value of `SBEVlv` is assigned to `EVlv`.\n\nAccording to the grammar:\n- This is an assignment statement: `<identifier> \":=\" <expression> \";\"`\n- The identifier on the left is `EVlv`\n- The expression on the right is `SBEVlv` (which is just an identifier)\n- The statement ends with a semicolon\n\nFor assignments, the translation requirement is:\n- Evaluate the expression and store the final accumulator value with `ST <identifier>`\n\nSo the IL translation should be:\n1. Load the value of `SBEVlv` into the accumulator: `LD SBEVlv`\n2. Store the accumulator value into `EVlv`: `ST EVlv`\n\nLet me double-check against the requirements:\n- I'm not using any jumps or labels ✓\n- I'm using the correct IL instructions (LD and ST) ✓\n- I'm preserving the exact identifiers as they appear in the source ✓\n- I'm not echoing ST syntax in the output ✓\n- I'm not using any forbidden tokens ✓\n- I'm following the one instruction per line rule ✓\n\nSo the final IL translation is:\n\n```\nLD SBEVlv\nST EVlv\n```\n\nThis is a straightforward translation with no complex expressions or control flow structures.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1238,
+    "completion_tokens": 306,
+    "total_tokens": 1544,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 7,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 294,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

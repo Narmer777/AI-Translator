@@ -1,0 +1,3 @@
+IF NOT _Htr AND SysOn AND NOT LTS THEN Htr:=1;
+ELSIF _Htr AND (NOT SysOn OR UTS) THEN Htr:=0;
+END_IF;

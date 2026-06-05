@@ -1,0 +1,10 @@
+LD X
+OR Y
+ST A
+LDN A
+ST B
+LD B
+AND (Z
+ORN W
+)
+ST C

@@ -1,0 +1,2 @@
+WnStg:= SysOn AND NOT Pmp AND WTS AND (PrdFn OR NOT LS0);
+RsStg:= SysOn AND NOT Pmp AND PrdFn AND NOT TP3 AND NOT WTS;

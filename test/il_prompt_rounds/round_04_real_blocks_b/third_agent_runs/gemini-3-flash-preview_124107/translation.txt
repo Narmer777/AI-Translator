@@ -1,0 +1,9 @@
+LD Htr
+ANDN WTS
+ST HtrTmr.IN
+LD Mtr
+ANDN MS
+ST MtrTmr.IN
+LD Mtr
+AND MS
+ST MixTmr.IN

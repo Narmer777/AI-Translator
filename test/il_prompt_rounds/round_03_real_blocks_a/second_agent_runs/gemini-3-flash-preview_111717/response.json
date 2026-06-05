@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780647530-F4UwKdF2bUFD6aOXSQzH",
+  "object": "chat.completion",
+  "created": 1780647530,
+  "model": "google/gemini-3-flash-preview-20251217",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "provisioned",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "LD Htr\nST _Htr\nLD WTS\nST _WTS\nLD HtrErr\nST _HtrErr\nLD PrdBn\nST _PrdBn\nLD EVlv\nST _EVlv\nLD PrdFn\nST _PrdFn\nLD HtStg\nST _HtStg\nLD SVlv\nST _SVlv\nLD Compl\nST _Compl\nLD SysOn\nST _SysOn\nLD RVlv\nST _RVlv\nLD LS0\nST _LS0\nLD TP1\nST _TP1\nLD TP2\nST _TP2\nLD TP3\nST _TP3\nLD Evpd\nST _Evpd",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "AY89a1/2sNb6II7QL8hznvugaMJMdyczc1Sm7JdE19sRQF9WoOop/g42OPrxuEvxjiM=",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2885,
+    "completion_tokens": 150,
+    "total_tokens": 3035,
+    "cost": 0.0018925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0018925,
+      "upstream_inference_prompt_cost": 0.0014425,
+      "upstream_inference_completions_cost": 0.00045
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

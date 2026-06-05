@@ -1,0 +1,1 @@
+IF _A AND (FALSE OR Stop) THEN A:=FALSE; END_IF;

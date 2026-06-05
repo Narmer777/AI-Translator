@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780563137-nI0vgRkcO2Fnf7wrvqdZ",
+  "object": "chat.completion",
+  "created": 1780563137,
+  "model": "deepseek/deepseek-v3.2-20251201",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LDN _HtrErr\nANDN WTS\nAND (HtrTmr.Q\nOR _Htr\nAND _WTS\n)\nS HtrErr\nLD _HtrErr\nAND PBStop\nR HtrErr\nLDN _MtrErr\nANDN MS\nAND (MtrTmr.Q\nOR _Mtr\nAND _MS\n)\nS MtrErr\nLD _MtrErr\nAND PBStop\nR MtrErr\nLDN _MxIsBd\nAND LS0\nAND _EVlv\nAND _C2InMx\nANDN _MxIsFn\nS MxIsBd\nLD _MxIsBd\nANDN LS0\nR MxIsBd\nLDN _MxIsFn\nAND LS0\nANDN MxIsBd\nAND MixTmr.Q\nS MxIsFn\nLD _MxIsFn\nANDN LS0\nR MxIsFn\nLD _Compl\nANDN _Vlv1\nANDN LS0\nOR HtrErr\nOR MtrErr\nOR MxIsBd\nOR SBEVlv\nOR PBStop\nOR (NOT TS1\nANDN LS1\nANDN MxIsFn\n)\nOR (NOT TS2\nANDN LS2\nANDN MxIsFn\n)\nST Fin\nLDN _SysOn\nAND PBStrt\nANDN Fin\nS SysOn\nLD _SysOn\nAND Fin\nR SysOn\nLDN _Htr\nAND SysOn\nANDN LTS\nS Htr\nLD _Htr\nAND (NOT SysOn\nOR UTS\n)\nR Htr\nLD SysOn\nAND TS1\nANDN LS1\nANDN C2InMx\nAND WTS\nST Vlv1\nLD SysOn\nAND TS2\nAND LS1\nANDN LS2\nANDN MxIsFn\nAND WTS\nST Vlv2\nLD SysOn\nAND C1InMx\nAND C2InMx\nAND LS2\nANDN MxIsFn\nAND WTS\nST Mtr\nLD SysOn\nAND MxIsFn\nAND WTS\nST PVlv\nLD SBEVlv\nST EVlv\nLD Htr\nANDN WTS\nST HtrTmr.IN\nLD Mtr\nANDN MS\nST MtrTmr.IN\nLD Mtr\nAND MS\nST MixTmr.IN",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1890,
+    "completion_tokens": 541,
+    "total_tokens": 2431,
+    "cost": 0.0004557,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1856,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0004557,
+      "upstream_inference_prompt_cost": 0.00025012,
+      "upstream_inference_completions_cost": 0.00020558
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

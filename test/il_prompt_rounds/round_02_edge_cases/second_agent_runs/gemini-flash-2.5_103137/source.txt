@@ -1,0 +1,1 @@
+A := NOT (X OR (Y AND Z));

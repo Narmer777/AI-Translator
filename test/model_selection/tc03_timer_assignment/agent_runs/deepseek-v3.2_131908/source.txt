@@ -1,0 +1,2 @@
+HtrTmr.IN:=Htr AND NOT WTS;
+

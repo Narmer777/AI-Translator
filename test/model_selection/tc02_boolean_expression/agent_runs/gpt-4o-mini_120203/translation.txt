@@ -1,0 +1,10 @@
+LD TS
+AND (SysOn
+OR TP3
+)
+ST Pmp
+
+LD SBSink
+ORN (SysOn
+AND TP3
+)

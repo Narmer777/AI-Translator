@@ -1,0 +1,11 @@
+LDN _Alarm
+AND (Tmr.Q
+ANDN Sensor.Ok
+)
+S Alarm
+
+LD _Alarm
+AND (ResetPB
+OR Sensor.Ok
+)
+R Alarm

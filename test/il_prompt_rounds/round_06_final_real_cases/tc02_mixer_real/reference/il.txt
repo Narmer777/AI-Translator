@@ -1,0 +1,194 @@
+                         (* IF         *)
+LDN      _HtrErr
+ANDN     WTS
+AND      (HtrTmr.Q
+OR       (_Htr
+AND      _WTS
+)
+)
+S        HtrErr          (* HtrErr:=1 *)
+                         (* ELSIF      *)
+LD       _HtrErr
+AND      PBStop
+R        HtrErr          (* HtrErr:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _MtrErr
+ANDN     MS
+AND      (MtrTmr.Q
+OR       (_Mtr
+AND      _MS
+)
+)
+S        MtrErr          (* MtrErr:=1 *)
+                         (* ELSIF      *)
+LD       _MtrErr
+AND      PBStop
+R        MtrErr          (* MtrErr:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _MxIsBd
+AND      LS0
+AND      _EVlv
+AND      _C2InMx
+ANDN     _MxIsFn
+S        MxIsBd          (* MxIsBd:=1 *)
+                         (* ELSIF      *)
+LD       _MxIsBd
+ANDN     LS0
+R        MxIsBd          (* MxIsBd:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _MxIsFn
+AND      LS0
+ANDN     MxIsBd
+AND      MixTmr.Q
+S        MxIsFn          (* MxIsFn:=1 *)
+                         (* ELSIF      *)
+LD       _MxIsFn
+ANDN     LS0
+R        MxIsFn          (* MxIsFn:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _C1InMx
+AND      LS0
+AND      _Vlv1
+AND      _TS1
+S        C1InMx          (* C1InMx:=1 *)
+                         (* ELSIF      *)
+LD       _C1InMx
+ANDN     LS0
+R        C1InMx          (* C1InMx:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _C2InMx
+AND      LS0
+AND      _Vlv2
+AND      _TS2
+S        C2InMx          (* C2InMx:=1 *)
+                         (* ELSIF      *)
+LD       _C2InMx
+ANDN     LS0
+R        C2InMx          (* C2InMx:=0 *)
+                         (* END_IF     *)
+LD       _Compl
+ANDN     _Vlv1
+ANDN     LS0
+OR       HtrErr
+OR       MtrErr
+OR       MxIsBd
+OR       SBEVlv
+OR       PBStop
+OR       (TS1
+NOT
+ANDN     LS1
+ANDN     MxIsFn
+)
+OR       (TS2
+NOT
+ANDN     LS2
+ANDN     MxIsFn
+)
+ST       Fin
+                         (* IF         *)
+LDN      _SysOn
+AND      PBStrt
+ANDN     Fin
+S        SysOn           (* SysOn:=1 *)
+                         (* ELSIF      *)
+LD       _SysOn
+AND      Fin
+R        SysOn           (* SysOn:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _Compl
+AND      SysOn
+AND      PBCmpl
+S        Compl           (* Compl:=1 *)
+                         (* ELSIF      *)
+LD       _Compl
+ANDN     SysOn
+R        Compl           (* Compl:=0 *)
+                         (* END_IF     *)
+                         (* IF         *)
+LDN      _Htr
+AND      SysOn
+ANDN     LTS
+S        Htr             (* Htr:=1 *)
+                         (* ELSIF      *)
+LD       _Htr
+AND      (SysOn
+NOT
+OR       UTS
+)
+R        Htr             (* Htr:=0 *)
+                         (* END_IF     *)
+LD       SysOn
+AND      TS1
+ANDN     LS1
+ANDN     C2InMx
+AND      WTS
+ST       Vlv1
+LD       SysOn
+AND      TS2
+AND      LS1
+ANDN     LS2
+ANDN     MxIsFn
+AND      WTS
+ST       Vlv2
+LD       SysOn
+AND      C1InMx
+AND      C2InMx
+AND      LS2
+ANDN     MxIsFn
+AND      WTS
+ST       Mtr
+LD       SysOn
+AND      MxIsFn
+AND      WTS
+ST       PVlv
+LD       SBEVlv
+ST       EVlv
+LD       Htr
+ANDN     WTS
+ST       HtrTmr.IN
+LD       Mtr
+ANDN     MS
+ST       MtrTmr.IN
+LD       Mtr
+AND      MS
+ST       MixTmr.IN
+LD       MtrErr
+ST       _MtrErr
+LD       HtrErr
+ST       _HtrErr
+LD       C1InMx
+ST       _C1InMx
+LD       C2InMx
+ST       _C2InMx
+LD       MxIsFn
+ST       _MxIsFn
+LD       MxIsBd
+ST       _MxIsBd
+LD       SysOn
+ST       _SysOn
+LD       Compl
+ST       _Compl
+LD       EVlv
+ST       _EVlv
+LD       Vlv1
+ST       _Vlv1
+LD       Vlv2
+ST       _Vlv2
+LD       Htr
+ST       _Htr
+LD       Mtr
+ST       _Mtr
+LD       TS1
+ST       _TS1
+LD       TS2
+ST       _TS2
+LD       MS
+ST       _MS
+LD       WTS
+ST       _WTS

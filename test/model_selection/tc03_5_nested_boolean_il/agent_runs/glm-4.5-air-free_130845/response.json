@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780481416-BZ1FkkTB1Cmov0mhMtLU",
+  "object": "chat.completion",
+  "created": 1780481416,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk",
+        "refusal": null,
+        "reasoning": "\nLet me translate the given ST program to IL according to the rules.\n\nThe ST program is:\n```\nModeOk:=Start AND (Ready OR (ValveOpen AND NOT Alarm));\n```\n\nThis is an assignment statement where we need to evaluate the expression `Start AND (Ready OR (ValveOpen AND NOT Alarm))` and store the result in `ModeOk`.\n\nLet's break down the expression:\n- The expression is an AND operation between `Start` and `(Ready OR (ValveOpen AND NOT Alarm))`\n- The right side of the AND is an OR operation between `Ready` and `(ValveOpen AND NOT Alarm)`\n- The right side of the OR is an AND operation between `ValveOpen` and `NOT Alarm`\n\nAccording to the translation rules:\n1. Start with `LD` for the leftmost operand: `LD Start`\n2. Then apply the AND operation with the parenthesized expression: `AND (`\n3. Inside the parentheses, we have an OR operation, so we start with the left operand of the OR: `Ready`\n4. Then apply the OR operation with the next parenthesized expression: `OR (`\n5. Inside this inner parentheses, we have an AND operation between `ValveOpen` and `NOT Alarm`\n6. For the NOT Alarm, we use `LDN Alarm`\n7. Then apply the AND operation: `AND ValveOpen`\n8. Close the inner parentheses: `)`\n9. Close the outer parentheses: `)`\n10. Finally, store the result in ModeOk: `ST ModeOk`\n\nPutting it all together:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```\n\nLet me double-check this against the rules:\n- I've preserved the exact source operands\n- I've preserved the grouping from the source expression\n- I've used LDN for the NOT Alarm\n- I've used parentheses to maintain the grouping\n- I've started with LD for the leftmost operand\n- I've ended with ST ModeOk\n- I haven't used any jumps or labels\n- I haven't echoed any ST syntax\n\nThis looks correct according to the rules.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me translate the given ST program to IL according to the rules.\n\nThe ST program is:\n```\nModeOk:=Start AND (Ready OR (ValveOpen AND NOT Alarm));\n```\n\nThis is an assignment statement where we need to evaluate the expression `Start AND (Ready OR (ValveOpen AND NOT Alarm))` and store the result in `ModeOk`.\n\nLet's break down the expression:\n- The expression is an AND operation between `Start` and `(Ready OR (ValveOpen AND NOT Alarm))`\n- The right side of the AND is an OR operation between `Ready` and `(ValveOpen AND NOT Alarm)`\n- The right side of the OR is an AND operation between `ValveOpen` and `NOT Alarm`\n\nAccording to the translation rules:\n1. Start with `LD` for the leftmost operand: `LD Start`\n2. Then apply the AND operation with the parenthesized expression: `AND (`\n3. Inside the parentheses, we have an OR operation, so we start with the left operand of the OR: `Ready`\n4. Then apply the OR operation with the next parenthesized expression: `OR (`\n5. Inside this inner parentheses, we have an AND operation between `ValveOpen` and `NOT Alarm`\n6. For the NOT Alarm, we use `LDN Alarm`\n7. Then apply the AND operation: `AND ValveOpen`\n8. Close the inner parentheses: `)`\n9. Close the outer parentheses: `)`\n10. Finally, store the result in ModeOk: `ST ModeOk`\n\nPutting it all together:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```\n\nLet me double-check this against the rules:\n- I've preserved the exact source operands\n- I've preserved the grouping from the source expression\n- I've used LDN for the NOT Alarm\n- I've used parentheses to maintain the grouping\n- I've started with LD for the leftmost operand\n- I've ended with ST ModeOk\n- I haven't used any jumps or labels\n- I haven't echoed any ST syntax\n\nThis looks correct according to the rules.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1342,
+    "completion_tokens": 476,
+    "total_tokens": 1818,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 7,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 451,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780486724-MRhtwGyD5PO5UROrOIUk",
+  "object": "chat.completion",
+  "created": 1780486724,
+  "model": "google/gemini-2.5-flash",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 6\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 6\n_LD_CONTACT\n_TP3\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\n_TP1\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\n_TP2\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nLS0\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\n_LS0\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_RVlv\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nTP3\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_TP3\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTS\n_EXPRESSION\n_NEGATIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_NEGATIV\n_SET\nTP3\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_CONTACT\nTP1\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\n_TP1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_CONTACT\nTP2\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\n_TP2\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\n_TP3\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_CONTACT\nEvpd\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\n_Evpd\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2015,
+    "completion_tokens": 651,
+    "total_tokens": 2666,
+    "cost": 0.002232,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.002232,
+      "upstream_inference_prompt_cost": 0.0006045,
+      "upstream_inference_completions_cost": 0.0016275
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

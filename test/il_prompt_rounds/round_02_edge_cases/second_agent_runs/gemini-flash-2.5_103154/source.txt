@@ -1,0 +1,3 @@
+A := X AND NOT Y;
+B := A OR Z;
+C := B AND NOT W;

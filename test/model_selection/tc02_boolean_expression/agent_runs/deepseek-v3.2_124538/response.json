@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780480030-RxT0igCBW2Vb041Bk7ci",
+  "object": "chat.completion",
+  "created": 1780480030,
+  "model": "deepseek/deepseek-v3.2-20251201",
+  "provider": "DigitalOcean",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1920,
+    "completion_tokens": 288,
+    "total_tokens": 2208,
+    "cost": 0.0014208,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0014208,
+      "upstream_inference_prompt_cost": 0.00096,
+      "upstream_inference_completions_cost": 0.0004608
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

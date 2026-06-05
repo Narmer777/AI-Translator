@@ -1,0 +1,9 @@
+LDN _MxIsBd
+AND LS0
+AND _EVlv
+AND _C2InMx
+ANDN _MxIsFn
+S MxIsBd
+LD _MxIsBd
+ANDN LS0
+R MxIsBd

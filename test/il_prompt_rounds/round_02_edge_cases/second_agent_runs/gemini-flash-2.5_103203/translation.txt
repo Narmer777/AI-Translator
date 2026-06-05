@@ -1,0 +1,12 @@
+LD X
+AND (Y
+OR Z
+)
+ST A
+LD A
+ORN P
+ST B
+LD B
+AND Q
+NOT
+ST C

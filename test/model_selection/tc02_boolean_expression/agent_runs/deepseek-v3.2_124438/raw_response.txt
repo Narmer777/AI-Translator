@@ -1,0 +1,13 @@
+
+         
+
+         
+
+         
+
+         
+
+         
+
+         
+{"id":"gen-1780479970-DhoYCiqaaTJq4THt07zP","object":"chat.completion","created":1780479970,"model":"deepseek/deepseek-v3.2-20251201","provider":"Novita","system_fingerprint":null,"service_tier":null,"choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","message":{"role":"assistant","content":"LD TS\nAND (SysOn\nAND TP3\nOR SBSink\n)\nST Pmp","refusal":null,"reasoning":null}}],"usage":{"prompt_tokens":1306,"completion_tokens":22,"total_tokens":1328,"cost":0.000360114,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.000360114,"upstream_inference_prompt_cost":0.000351314,"upstream_inference_completions_cost":0.0000088},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

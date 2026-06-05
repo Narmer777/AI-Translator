@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780476779-VEk2aP3ho2HaJJv320C6",
+  "object": "chat.completion",
+  "created": 1780476779,
+  "model": "nvidia/nemotron-3-super-120b-a12b-20230311:free",
+  "provider": "Nvidia",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD SBEvlv\nST EVlv",
+        "refusal": null,
+        "reasoning": "We need to translate ST: \"EVlv:=SBEVlv;\" to IL.\n\nIt's a simple assignment: identifier EVlv := expression SBEvlv (no parentheses, just identifier). So we need to load SBEvlv then store to EVlv.\n\nThus IL:\n\nLD SBEvlv\nST EVlv\n\nWe must ensure each line starts with exactly one IL token: LD, ST. No extra spaces? Probably \"LD SBEvlv\" and \"ST EVlv\". No trailing spaces.\n\nCheck constraints: No jumps, no IF, etc. Good.\n\nThus output:\n\nLD SBEvlv\nST EVlv\n\nMake sure no extra lines.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "We need to translate ST: \"EVlv:=SBEVlv;\" to IL.\n\nIt's a simple assignment: identifier EVlv := expression SBEvlv (no parentheses, just identifier). So we need to load SBEvlv then store to EVlv.\n\nThus IL:\n\nLD SBEvlv\nST EVlv\n\nWe must ensure each line starts with exactly one IL token: LD, ST. No extra spaces? Probably \"LD SBEvlv\" and \"ST EVlv\". No trailing spaces.\n\nCheck constraints: No jumps, no IF, etc. Good.\n\nThus output:\n\nLD SBEvlv\nST EVlv\n\nMake sure no extra lines.\n\n",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1303,
+    "completion_tokens": 149,
+    "total_tokens": 1452,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 133,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,122 @@
+LDN _HtrErr
+ANDN WTS
+AND (HtrTmr.Q
+OR (_Htr
+AND _WTS
+)
+)
+S HtrErr
+
+LD _HtrErr
+AND PBStop
+R HtrErr
+
+LDN _MtrErr
+ANDN MS
+AND (MtrTmr.Q
+OR (_Mtr
+AND _MS
+)
+)
+S MtrErr
+
+LD _MtrErr
+AND PBStop
+R MtrErr
+
+LDN _MxIsBd
+AND LS0
+AND _EVlv
+AND _C2InMx
+ANDN _MxIsFn
+S MxIsBd
+
+LD _MxIsBd
+ANDN LS0
+R MxIsBd
+
+LDN _MxIsFn
+AND LS0
+ANDN MxIsBd
+AND MixTmr.Q
+S MxIsFn
+
+LD _MxIsFn
+ANDN LS0
+R MxIsFn
+
+LD _Compl
+ANDN _Vlv1
+ANDN LS0
+OR HtrErr
+OR MtrErr
+OR MxIsBd
+OR SBEVlv
+OR PBStop
+ANDN TS1
+ANDN LS1
+ANDN MxIsFn
+OR ANDN TS2
+ANDN LS2
+ANDN MxIsFn
+ST Fin
+
+LDN _SysOn
+AND PBStrt
+ANDN Fin
+S SysOn
+
+LD _SysOn
+AND Fin
+R SysOn
+
+LDN _Htr
+AND SysOn
+ANDN LTS
+S Htr
+
+LD _Htr
+AND (ANDN SysOn
+OR UTS
+)
+R Htr
+
+LD SysOn
+AND TS1
+ANDN LS1
+ANDN C2InMx
+AND WTS
+ST Vlv1
+
+LD SysOn
+AND TS2
+AND LS1
+ANDN LS2
+ANDN MxIsFn
+AND WTS
+ST Vlv2
+
+LD SysOn
+AND C1InMx
+AND C2InMx
+AND LS2
+ANDN MxIsFn
+AND WTS
+ST Mtr
+
+LD SysOn
+AND MxIsFn
+AND WTS
+ST PVlv
+
+LD Htr
+ANDN WTS
+ST HtrTmr.IN
+
+LD Mtr
+ANDN MS
+ST MtrTmr.IN
+
+LD Mtr
+AND MS
+ST MixTmr.IN

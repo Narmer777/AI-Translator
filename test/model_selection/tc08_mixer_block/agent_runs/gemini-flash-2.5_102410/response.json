@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780557943-tm5pYxmCIjXyXd85yJF0",
+  "object": "chat.completion",
+  "created": 1780557943,
+  "model": "google/gemini-2.5-flash",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "LDN _C1InMx\nAND LS0\nAND _Vlv1\nAND _TS1\nS C1InMx\nLD _C1InMx\nANDN LS0\nR C1InMx\nLDN _C2InMx\nAND LS0\nAND _Vlv2\nAND _TS2\nS C2InMx\nLD _C2InMx\nANDN LS0\nR C2InMx\nLD SysOn\nAND TS1\nANDN LS1\nANDN C2InMx\nAND WTS\nST Vlv1\nLD SysOn\nAND TS2\nAND LS1\nANDN LS2\nANDN MxIsFn\nAND WTS\nST Vlv2\nLD SysOn\nAND C1InMx\nAND C2InMx\nAND LS2\nANDN MxIsFn\nAND WTS\nST Mtr\nLD SysOn\nAND MxIsFn\nAND WTS\nST PVlv",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1643,
+    "completion_tokens": 205,
+    "total_tokens": 1848,
+    "cost": 0.0010054,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0010054,
+      "upstream_inference_prompt_cost": 0.0004929,
+      "upstream_inference_completions_cost": 0.0005125
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

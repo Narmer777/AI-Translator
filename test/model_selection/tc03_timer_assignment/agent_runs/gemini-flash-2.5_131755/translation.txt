@@ -1,0 +1,3 @@
+LD Htr
+ANDN WTS
+ST HtrTmr.IN

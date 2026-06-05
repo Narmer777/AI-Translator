@@ -1,0 +1,3 @@
+IF NOT _Compl AND SysOn AND PBCmpl THEN Compl:=TRUE;
+ELSIF  _Compl AND NOT SysOn THEN Compl:=FALSE;
+END_IF;

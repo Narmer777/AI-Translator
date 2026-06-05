@@ -1,0 +1,7 @@
+LDN X
+AND Y
+OR (Z
+NOT
+AND W
+)
+ST A

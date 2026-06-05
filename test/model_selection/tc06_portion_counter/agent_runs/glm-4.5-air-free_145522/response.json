@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780487815-HMTRHNTKZG7VXhQNcAKu",
+  "object": "chat.completion",
+  "created": 1780487815,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd",
+        "refusal": null,
+        "reasoning": "\nLet me translate the given ST program to IL for CoDeSys 2.3.\n\nFirst, let's analyze the ST program:\n\n```\nIF NOT _TP3 AND NOT _TP1 AND _TP2 AND NOT LS0 AND _LS0 AND _RVlv THEN TP3:=TRUE;\nELSIF _TP3 AND NOT TS THEN TP3:=FALSE;\nEND_IF;\n\n_TP1:=TP1;\n_TP2:=TP2;\n_TP3:=TP3;\n_Evpd:=Evpd;\n```\n\nThis program consists of:\n1. An IF-ELSIF-END_IF block with two branches\n2. Four simple assignments\n\nLet's translate each part:\n\n1. IF-ELSIF-END_IF block:\n\nFirst branch condition: `NOT _TP3 AND NOT _TP1 AND _TP2 AND NOT LS0 AND _LS0 AND _RVlv`\nThis is a series of AND operations. According to the rules, we need to preserve the grouping and use LD/LDN for the first operand.\n\nThe first operand is `NOT _TP3`, so we start with `LDN _TP3`.\nThen we continue with the rest of the AND operations:\n- `ANDN _TP1` (because it's NOT _TP1)\n- `AND _TP2`\n- `ANDN LS0` (because it's NOT LS0)\n- `AND _LS0`\n- `AND _RVlv`\n\nThe action for this branch is `TP3:=TRUE`, which translates to `S TP3`.\n\nSecond branch condition: `_TP3 AND NOT TS`\nThis is simpler:\n- `LD _TP3`\n- `ANDN TS` (because it's NOT TS)\n\nThe action for this branch is `TP3:=FALSE`, which translates to `R TP3`.\n\nFor the IF-ELSIF-END_IF structure, we need to use S/R logic. The first branch sets TP3 to TRUE if its condition is met. The second branch resets TP3 to FALSE if its condition is met, but only if the first condition is not met.\n\nSo the IL for the IF-ELSIF block would be:\n\n```\nLDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n```\n\n2. Simple assignments:\n\n```\n_TP1:=TP1;\n_TP2:=TP2;\n_TP3:=TP3;\n_Evpd:=Evpd;\n```\n\nThese translate to:\n\n```\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd\n```\n\nPutting it all together, the complete IL program is:\n\n```\nLDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd\n```\n\nLet me double-check this translation:\n\n1. For the IF-ELSIF block:\n   - First branch: We correctly translated the condition with LDN for the first NOT operand, followed by ANDN for the second NOT operand, and AND for the rest. The action is S TP3.\n   - Second branch: We correctly translated the condition with LD for the first operand and ANDN for the NOT operand. The action is R TP3.\n   - The order of branches is preserved.\n\n2. For the assignments:\n   - Each assignment is correctly translated with LD for the source and ST for the destination.\n   - The identifiers are preserved exactly as in the source.\n\n3. We didn't use any JMP, JMPC, or labels.\n4. We didn't include any comments or explanations.\n5. We followed the IL syntax rules.\n\nThe translation looks correct. Let me finalize it.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me translate the given ST program to IL for CoDeSys 2.3.\n\nFirst, let's analyze the ST program:\n\n```\nIF NOT _TP3 AND NOT _TP1 AND _TP2 AND NOT LS0 AND _LS0 AND _RVlv THEN TP3:=TRUE;\nELSIF _TP3 AND NOT TS THEN TP3:=FALSE;\nEND_IF;\n\n_TP1:=TP1;\n_TP2:=TP2;\n_TP3:=TP3;\n_Evpd:=Evpd;\n```\n\nThis program consists of:\n1. An IF-ELSIF-END_IF block with two branches\n2. Four simple assignments\n\nLet's translate each part:\n\n1. IF-ELSIF-END_IF block:\n\nFirst branch condition: `NOT _TP3 AND NOT _TP1 AND _TP2 AND NOT LS0 AND _LS0 AND _RVlv`\nThis is a series of AND operations. According to the rules, we need to preserve the grouping and use LD/LDN for the first operand.\n\nThe first operand is `NOT _TP3`, so we start with `LDN _TP3`.\nThen we continue with the rest of the AND operations:\n- `ANDN _TP1` (because it's NOT _TP1)\n- `AND _TP2`\n- `ANDN LS0` (because it's NOT LS0)\n- `AND _LS0`\n- `AND _RVlv`\n\nThe action for this branch is `TP3:=TRUE`, which translates to `S TP3`.\n\nSecond branch condition: `_TP3 AND NOT TS`\nThis is simpler:\n- `LD _TP3`\n- `ANDN TS` (because it's NOT TS)\n\nThe action for this branch is `TP3:=FALSE`, which translates to `R TP3`.\n\nFor the IF-ELSIF-END_IF structure, we need to use S/R logic. The first branch sets TP3 to TRUE if its condition is met. The second branch resets TP3 to FALSE if its condition is met, but only if the first condition is not met.\n\nSo the IL for the IF-ELSIF block would be:\n\n```\nLDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n```\n\n2. Simple assignments:\n\n```\n_TP1:=TP1;\n_TP2:=TP2;\n_TP3:=TP3;\n_Evpd:=Evpd;\n```\n\nThese translate to:\n\n```\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd\n```\n\nPutting it all together, the complete IL program is:\n\n```\nLDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd\n```\n\nLet me double-check this translation:\n\n1. For the IF-ELSIF block:\n   - First branch: We correctly translated the condition with LDN for the first NOT operand, followed by ANDN for the second NOT operand, and AND for the rest. The action is S TP3.\n   - Second branch: We correctly translated the condition with LD for the first operand and ANDN for the NOT operand. The action is R TP3.\n   - The order of branches is preserved.\n\n2. For the assignments:\n   - Each assignment is correctly translated with LD for the source and ST for the destination.\n   - The identifiers are preserved exactly as in the source.\n\n3. We didn't use any JMP, JMPC, or labels.\n4. We didn't include any comments or explanations.\n5. We followed the IL syntax rules.\n\nThe translation looks correct. Let me finalize it.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1401,
+    "completion_tokens": 939,
+    "total_tokens": 2340,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1400,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 851,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

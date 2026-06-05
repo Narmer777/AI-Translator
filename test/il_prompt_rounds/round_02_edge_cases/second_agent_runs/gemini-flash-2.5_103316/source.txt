@@ -1,0 +1,3 @@
+IF NOT _Ready AND (Sensor.Ok AND (Tmr.Q OR ManualMode)) THEN Ready:=1;
+ELSIF _Ready AND NOT (Sensor.Ok OR ManualMode) THEN Ready:=0;
+END_IF;

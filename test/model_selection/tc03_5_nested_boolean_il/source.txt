@@ -1,0 +1,2 @@
+ModeOk:=Start AND (Ready OR (ValveOpen AND NOT Alarm));
+

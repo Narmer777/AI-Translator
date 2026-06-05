@@ -1,0 +1,8 @@
+LDN _A
+AND (X
+OR Y
+)
+ANDN (Z
+OR W
+)
+S A

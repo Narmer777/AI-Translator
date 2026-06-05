@@ -1,0 +1,11 @@
+LDN _A
+AND (X
+NOT
+OR Y
+)
+S A
+LD _A
+AND (Z
+ORN W
+)
+R A

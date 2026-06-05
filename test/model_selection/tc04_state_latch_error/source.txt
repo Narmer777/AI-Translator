@@ -1,0 +1,4 @@
+IF NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS) THEN HtrErr:=TRUE;
+ELSIF _HtrErr AND PBStop THEN HtrErr:=FALSE;
+END_IF;
+

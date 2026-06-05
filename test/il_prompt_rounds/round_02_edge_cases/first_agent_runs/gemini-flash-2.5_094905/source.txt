@@ -1,0 +1,1 @@
+Ready := Sensor.Ok AND (Tmr.Q OR NOT Tmr.IN);

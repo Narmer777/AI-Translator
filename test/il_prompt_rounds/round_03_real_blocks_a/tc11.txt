@@ -1,0 +1,2 @@
+Pmp  := TS AND ((SysOn AND TP3) OR SBSink);
+HtStg:= SysOn AND LS0 AND NOT PrdFn AND (LS2 OR Evpd);

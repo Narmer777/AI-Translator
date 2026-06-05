@@ -1,0 +1,5 @@
+Vlv1:=SysOn AND TS1 AND NOT LS1               AND NOT C2InMx AND WTS;
+Vlv2:=SysOn AND TS2 AND     LS1   AND NOT LS2 AND NOT MxIsFn AND WTS;
+Mtr :=SysOn AND C1InMx AND C2InMx AND     LS2 AND NOT MxIsFn AND WTS;
+PVlv:=SysOn                                   AND     MxIsFn AND WTS;
+EVlv:=SBEVlv;

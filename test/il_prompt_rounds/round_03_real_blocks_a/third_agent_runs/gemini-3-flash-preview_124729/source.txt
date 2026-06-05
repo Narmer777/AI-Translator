@@ -1,0 +1,3 @@
+_Htr:=Htr; _WTS:=WTS; _HtrErr:=HtrErr; _PrdBn:=PrdBn; _EVlv:=EVlv; _PrdFn:=PrdFn; _HtStg:=HtStg;
+_SVlv:=SVlv; _Compl:=Compl; _SysOn:=SysOn; _RVlv:=RVlv; _LS0:=LS0;
+_TP1:=TP1; _TP2:=TP2; _TP3:=TP3; _Evpd:=Evpd;

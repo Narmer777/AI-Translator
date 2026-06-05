@@ -1,0 +1,17 @@
+
+         
+
+         
+
+         
+
+         
+
+         
+
+         
+
+         
+
+         
+{"id":"gen-1780557839-3t0KWaCJcFClmtwchvma","object":"chat.completion","created":1780557839,"model":"openai/gpt-4o-mini","provider":"Azure","system_fingerprint":"fp_4dcfea0a44","service_tier":null,"choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","message":{"role":"assistant","content":"LDN _C1InMx\nAND LS0\nAND _Vlv1\nAND _TS1\nS C1InMx\n\nLD _C1InMx\nANDN LS0\nR C1InMx\n\nLDN _C2InMx\nAND LS0\nAND _Vlv2\nAND _TS2\nS C2InMx\n\nLD _C2InMx\nANDN LS0\nR C2InMx\n\nLD SysOn\nAND TS1\nANDN LS1\nANDN C2InMx\nAND WTS\nST Vlv1\n\nLD SysOn\nAND TS2\nAND LS1\nANDN LS2\nANDN MxIsFn\nAND WTS\nST Vlv2\n\nLD SysOn\nAND C1InMx\nAND C2InMx\nAND LS2\nANDN MxIsFn\nAND WTS\nST Mtr\n\nLD SysOn\nAND MxIsFn\nAND WTS\nST PVlv","refusal":null,"reasoning":null}}],"usage":{"prompt_tokens":1522,"completion_tokens":209,"total_tokens":1731,"cost":0.0003537,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.0003537,"upstream_inference_prompt_cost":0.0002283,"upstream_inference_completions_cost":0.0001254},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

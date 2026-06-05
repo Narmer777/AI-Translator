@@ -1,0 +1,9 @@
+LD X
+ANDN Y
+ST A
+LD A
+OR Z
+ST B
+LD B
+ANDN W
+ST C

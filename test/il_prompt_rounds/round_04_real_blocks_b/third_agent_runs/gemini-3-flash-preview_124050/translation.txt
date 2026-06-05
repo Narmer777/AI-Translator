@@ -1,0 +1,7 @@
+LDN _SysOn
+AND PBStrt
+ANDN Fin
+S SysOn
+LD _SysOn
+AND Fin
+R SysOn

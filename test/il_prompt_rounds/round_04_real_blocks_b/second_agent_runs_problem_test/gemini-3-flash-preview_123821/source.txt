@@ -1,0 +1,3 @@
+Fin:= _Compl AND NOT _Vlv1 AND NOT LS0 OR HtrErr OR MtrErr OR MxIsBd OR SBEVlv OR PBStop
+                                                OR NOT TS1 AND NOT LS1 AND NOT MxIsFn
+                                                OR NOT TS2 AND NOT LS2 AND NOT MxIsFn;

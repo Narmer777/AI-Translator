@@ -1,0 +1,1 @@
+Tmr.IN := SysOn AND (NOT Alarm OR ManualMode);

@@ -1,0 +1,9 @@
+LD X
+AND (Y
+OR (Z
+AND (P
+ORN Q
+)
+)
+)
+ST A

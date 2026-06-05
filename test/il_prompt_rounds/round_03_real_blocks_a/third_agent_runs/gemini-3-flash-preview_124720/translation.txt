@@ -1,0 +1,13 @@
+LD SysOn
+ANDN Pmp
+AND WTS
+AND (PrdFn
+ORN LS0
+)
+ST WnStg
+LD SysOn
+ANDN Pmp
+AND PrdFn
+ANDN TP3
+ANDN WTS
+ST RsStg

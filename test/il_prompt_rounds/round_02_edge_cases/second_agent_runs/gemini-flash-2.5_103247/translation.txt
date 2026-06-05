@@ -1,0 +1,10 @@
+LDN _A
+ANDN (X
+AND Y
+)
+S A
+LD _A
+ANDN (P
+OR Q
+)
+R A

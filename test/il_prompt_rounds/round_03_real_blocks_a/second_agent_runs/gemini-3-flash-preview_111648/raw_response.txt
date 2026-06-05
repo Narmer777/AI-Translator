@@ -1,0 +1,7 @@
+
+         
+
+         
+
+         
+{"id":"gen-1780647501-bhKV0FzaJSfOKtZPk18p","object":"chat.completion","created":1780647501,"model":"google/gemini-3-flash-preview-20251217","provider":"Google","system_fingerprint":null,"service_tier":"default","choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"STOP","message":{"role":"assistant","content":"LD _Compl\nANDN _SVlv\nANDN LS0\nANDN TS\nOR (PBCmpl\nANDN _SVlv\nANDN LS0\nANDN TS\n)\nOR HtrErr\nOR SBEVlv\nOR SBSink\nOR PrdBn\nOR PBStop\nST Fin","refusal":null,"reasoning":null,"reasoning_details":[{"type":"reasoning.encrypted","data":"AY89a19wY2rFnfoV4m13QwTC0Uy7dg+HW4jaUcc3M+jH8tAYmizBz1vCEpydqv9uVhA=","format":"google-gemini-v1","index":0}]}}],"usage":{"prompt_tokens":2828,"completion_tokens":67,"total_tokens":2895,"cost":0.001615,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.001615,"upstream_inference_prompt_cost":0.001414,"upstream_inference_completions_cost":0.000201},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

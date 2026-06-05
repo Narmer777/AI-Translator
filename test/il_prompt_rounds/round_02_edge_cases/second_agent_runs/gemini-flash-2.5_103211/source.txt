@@ -1,0 +1,1 @@
+IF NOT _A AND (X AND (Y OR NOT Z)) THEN A:=1; END_IF;

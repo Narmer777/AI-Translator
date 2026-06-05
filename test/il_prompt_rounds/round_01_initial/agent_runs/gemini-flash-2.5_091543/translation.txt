@@ -1,0 +1,6 @@
+LDN X
+OR Y
+AND (Z
+ORN W
+)
+ST A

@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780482139-ufaUTJSBuJi4zeYIiIQg",
+  "object": "chat.completion",
+  "created": 1780482139,
+  "model": "qwen/qwen3.6-flash",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD Htr\nANDN WTS\nST HtrTmr.IN",
+        "refusal": null,
+        "reasoning": "Here's a thinking process:\n\n1.  **Analyze the Input ST Program:**\n   `HtrTmr.IN:=Htr AND NOT WTS;`\n\n2.  **Identify Components:**\n   - Assignment: `HtrTmr.IN := ...`\n   - Expression: `Htr AND NOT WTS`\n   - Operators: `AND`, `NOT`\n   - Operands: `Htr`, `WTS`\n   - Target: `HtrTmr.IN`\n\n3.  **Apply Translation Rules:**\n   - Assignment: Evaluate expression, then `ST HtrTmr.IN`\n   - Expression: `Htr AND NOT WTS`\n   - Start with `LD Htr`\n   - Next is `AND NOT WTS`. According to rules, `NOT` can be handled with `ANDN` if it's a direct negated identifier, or `NOT` instruction. The rule says: \"Use LDN, ANDN, ORN for direct negated identifiers.\" and \"Start an assignment expression with LD <leftmost operand> or LDN <operand> if the expression starts with NOT.\"\n   - Here, it's `Htr AND NOT WTS`. So after `LD Htr`, we need `ANDN WTS`.\n   - Let's verify: `LD Htr` loads Htr. `ANDN WTS` ANDs with NOT WTS. This matches `Htr AND NOT WTS`.\n   - Then `ST HtrTmr.IN`.\n\n4.  **Check Constraints:**\n   - One IL instruction per line.\n   - No markdown, explanations, etc.\n   - No JMP/JMPC/labels.\n   - IF/ELSIF not present.\n   - IEC-style IL: LD, ANDN, ST.\n   - Parentheses not used here.\n   - Boolean precedence: NOT > AND. Handled correctly.\n   - Never echo ST syntax.\n   - Forbidden tokens: IF, THEN, etc. (Not used)\n   - Preserve source expression semantics exactly.\n   - Dotted identifiers preserved: `HtrTmr.IN`\n   - Treat 1/0 as TRUE/FALSE: Not applicable here.\n   - Direct negated identifiers: `ANDN WTS` is correct.\n   - Output format:\n     LD Htr\n     ANDN WTS\n     ST HtrTmr.IN\n\n5.  **Final Verification:**\n   ST: `HtrTmr.IN:=Htr AND NOT WTS;`\n   IL:\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n\n   Matches all rules. No extra lines. Correct tokens. Correct structure.\n   Ready.✅\n   Output matches exactly.✅\n   Proceed. \n   One minor check: The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" and \"For a binary operation with a parenthesized right side...\". Here it's `AND NOT WTS`, so `ANDN WTS` is perfect.\n   All good. \n   Output generation. \n   `LD Htr\\nANDN WTS\\nST HtrTmr.IN` (with newlines)\n   Matches requirement.✅\n   Proceeds. \n   [Output Generation] -> LD Htr\\nANDN WTS\\nST HtrTmr.IN\n   (Self-Correction/Refinement during thought)\n   Wait, let's double check the exact rule: \"Use LDN, ANDN, ORN for direct negated identifiers.\"\n   And \"Start an assignment expression with LD <leftmost operand> or LDN <operand> if the expression starts with NOT.\"\n   The expression is `Htr AND NOT WTS`.\n   So `LD Htr` then `ANDN WTS` is correct.\n   Could it be `LD Htr` `AND` `NOT` `WTS`? The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" So `ANDN` is preferred/required.\n   I will stick with `ANDN WTS`.\n   All constraints met.\n   Output matches.✅\n   Proceeds. \n   [Output]\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Note: I will ensure no extra whitespace or markdown)\n   Done. \n   [Final Check of the Prompt]\n   \"HtrTmr.IN:=Htr AND NOT WTS;\"\n   Translates to:\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   Matches perfectly.✅\n   Output matches request.✅\n   Proceeds. \n   [Output Generation] (matches exactly)\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Done)\n   [Self-Correction/Verification during generation]\n   Wait, is there any chance `NOT WTS` should be `NOT` then `WTS`? The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" So `ANDN` is correct.\n   All good.\n   Output matches.✅\n   Proceeds. \n   [Final Output Generation] -> (as above)\n   (Note: I will strictly follow the \"plain IL only\" rule.)\n   Done. \n   [Output]\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Proceeds)",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "Here's a thinking process:\n\n1.  **Analyze the Input ST Program:**\n   `HtrTmr.IN:=Htr AND NOT WTS;`\n\n2.  **Identify Components:**\n   - Assignment: `HtrTmr.IN := ...`\n   - Expression: `Htr AND NOT WTS`\n   - Operators: `AND`, `NOT`\n   - Operands: `Htr`, `WTS`\n   - Target: `HtrTmr.IN`\n\n3.  **Apply Translation Rules:**\n   - Assignment: Evaluate expression, then `ST HtrTmr.IN`\n   - Expression: `Htr AND NOT WTS`\n   - Start with `LD Htr`\n   - Next is `AND NOT WTS`. According to rules, `NOT` can be handled with `ANDN` if it's a direct negated identifier, or `NOT` instruction. The rule says: \"Use LDN, ANDN, ORN for direct negated identifiers.\" and \"Start an assignment expression with LD <leftmost operand> or LDN <operand> if the expression starts with NOT.\"\n   - Here, it's `Htr AND NOT WTS`. So after `LD Htr`, we need `ANDN WTS`.\n   - Let's verify: `LD Htr` loads Htr. `ANDN WTS` ANDs with NOT WTS. This matches `Htr AND NOT WTS`.\n   - Then `ST HtrTmr.IN`.\n\n4.  **Check Constraints:**\n   - One IL instruction per line.\n   - No markdown, explanations, etc.\n   - No JMP/JMPC/labels.\n   - IF/ELSIF not present.\n   - IEC-style IL: LD, ANDN, ST.\n   - Parentheses not used here.\n   - Boolean precedence: NOT > AND. Handled correctly.\n   - Never echo ST syntax.\n   - Forbidden tokens: IF, THEN, etc. (Not used)\n   - Preserve source expression semantics exactly.\n   - Dotted identifiers preserved: `HtrTmr.IN`\n   - Treat 1/0 as TRUE/FALSE: Not applicable here.\n   - Direct negated identifiers: `ANDN WTS` is correct.\n   - Output format:\n     LD Htr\n     ANDN WTS\n     ST HtrTmr.IN\n\n5.  **Final Verification:**\n   ST: `HtrTmr.IN:=Htr AND NOT WTS;`\n   IL:\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n\n   Matches all rules. No extra lines. Correct tokens. Correct structure.\n   Ready.✅\n   Output matches exactly.✅\n   Proceed. \n   One minor check: The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" and \"For a binary operation with a parenthesized right side...\". Here it's `AND NOT WTS`, so `ANDN WTS` is perfect.\n   All good. \n   Output generation. \n   `LD Htr\\nANDN WTS\\nST HtrTmr.IN` (with newlines)\n   Matches requirement.✅\n   Proceeds. \n   [Output Generation] -> LD Htr\\nANDN WTS\\nST HtrTmr.IN\n   (Self-Correction/Refinement during thought)\n   Wait, let's double check the exact rule: \"Use LDN, ANDN, ORN for direct negated identifiers.\"\n   And \"Start an assignment expression with LD <leftmost operand> or LDN <operand> if the expression starts with NOT.\"\n   The expression is `Htr AND NOT WTS`.\n   So `LD Htr` then `ANDN WTS` is correct.\n   Could it be `LD Htr` `AND` `NOT` `WTS`? The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" So `ANDN` is preferred/required.\n   I will stick with `ANDN WTS`.\n   All constraints met.\n   Output matches.✅\n   Proceeds. \n   [Output]\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Note: I will ensure no extra whitespace or markdown)\n   Done. \n   [Final Check of the Prompt]\n   \"HtrTmr.IN:=Htr AND NOT WTS;\"\n   Translates to:\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   Matches perfectly.✅\n   Output matches request.✅\n   Proceeds. \n   [Output Generation] (matches exactly)\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Done)\n   [Self-Correction/Verification during generation]\n   Wait, is there any chance `NOT WTS` should be `NOT` then `WTS`? The rule says \"Use LDN, ANDN, ORN for direct negated identifiers.\" So `ANDN` is correct.\n   All good.\n   Output matches.✅\n   Proceeds. \n   [Final Output Generation] -> (as above)\n   (Note: I will strictly follow the \"plain IL only\" rule.)\n   Done. \n   [Output]\n   LD Htr\n   ANDN WTS\n   ST HtrTmr.IN\n   (Proceeds)",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1442,
+    "completion_tokens": 1210,
+    "total_tokens": 2652,
+    "cost": 0.001631625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001631625,
+      "upstream_inference_prompt_cost": 0.000270375,
+      "upstream_inference_completions_cost": 0.00136125
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1190,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

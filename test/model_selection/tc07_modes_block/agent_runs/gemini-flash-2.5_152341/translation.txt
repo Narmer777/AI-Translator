@@ -1,0 +1,40 @@
+LD TS
+AND (SysOn
+AND TP3
+OR SBSink
+)
+ST Pmp
+LD SysOn
+AND LS0
+ANDN PrdFn
+AND (LS2
+OR Evpd
+)
+ST HtStg
+LD SysOn
+ANDN Pmp
+ANDN WTS
+ANDN LS2
+ANDN PrdFn
+ANDN Evpd
+ANDN (_Compl
+ANDN LS0
+ANDN _SVlv
+AND (TP3
+OR NOT TS
+)
+)
+ST SbStg
+LD SysOn
+ANDN Pmp
+AND WTS
+AND (PrdFn
+OR NOT LS0
+)
+ST WnStg
+LD SysOn
+ANDN Pmp
+AND PrdFn
+ANDN TP3
+ANDN WTS
+ST RsStg

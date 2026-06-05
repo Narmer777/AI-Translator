@@ -1,0 +1,3 @@
+HtrTmr.IN:= Htr AND NOT WTS;
+MtrTmr.IN:= Mtr AND NOT MS;
+MixTmr.IN:= Mtr AND     MS;

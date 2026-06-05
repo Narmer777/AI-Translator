@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780478252-5BfNh8wVEBtJcaUoWNNQ",
+  "object": "chat.completion",
+  "created": 1780478252,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": "Let me analyze the source ST program:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\nThis is a direct assignment to Pmp.\n\nThe expression is: TS AND ((SysOn AND TP3) OR SBSink)\n\nBreaking it down:\n- Top level: AND of TS and ((SysOn AND TP3) OR SBSink)\n- So it's an _LD_AND with 2 operands:\n  1. TS (contact)\n  2. ((SysOn AND TP3) OR SBSink) - this is an _LD_OR with 2 operands:\n    a. (SysOn AND TP3) - _LD_AND with 2 operands: SysOn, TP3\n    b. SBSink (contact)\n\nSo the structure is:\n_LD_AND (2 operands)\n  _LD_CONTACT TS\n  _LD_OR (2 operands)\n    _LD_AND (2 operands)\n      _LD_CONTACT SysOn\n      _LD_CONTACT TP3\n    _LD_CONTACT SBSink\n\nNow let me construct the LD export following the format.\n\nLooking at the reference example, each contact is followed by _EXPRESSION and _POSITIV (or _NEGATIV). Each nested operator block also seems to be followed by _EXPRESSION and _POSITIV.\n\nLet me trace the reference example carefully:\n\nY := X AND NOT Z;\n\n```\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nX\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nZ\n_EXPRESSION\n_NEGATIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nSo the pattern seems to be:\n- _LD_ASSIGN\n- _LD_AND (or _LD_OR)\n- _LD_OPERATOR : N\n- For each operand:\n  - _LD_CONTACT, name, _EXPRESSION, _POSITIV/_NEGATIV\n  - OR nested _LD_AND/_LD_OR block\n- _EXPRESSION, _POSITIV (closing the AND/OR)\n- _EXPRESSION, _POSITIV (closing the LD_ASSIGN)\n\nFor my case:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\n```\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nWait, let me re-examine the reference more carefully. The reference has:\n- _LD_AND with 2 operands\n- After both contacts, there are two _EXPRESSION/_POSITIV pairs\n\nThe first _EXPRESSION/_POSITIV closes the _LD_AND block.\nThe second _EXPRESSION/_POSITIV closes the _LD_ASSIGN.\n\nSo for nested blocks, each block closing would add an _EXPRESSION/_POSITIV pair.\n\nLet me structure it:\n\n_LD_ASSIGN\n_LD_AND                    -- top-level AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR                     -- nested OR\n_LD_OPERATOR : 2\n_LD_AND                    -- nested AND inside OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION                -- close inner AND\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION                -- close OR\n_POSITIV\n_EXPRESSION                -- close top-level AND\n_POSITIV\n_EXPRESSION                -- close _LD_ASSIGN\n_POSITIV\n\nThen the output section:\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\n\nThis is 1 network. Let me write the full output.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "Let me analyze the source ST program:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\nThis is a direct assignment to Pmp.\n\nThe expression is: TS AND ((SysOn AND TP3) OR SBSink)\n\nBreaking it down:\n- Top level: AND of TS and ((SysOn AND TP3) OR SBSink)\n- So it's an _LD_AND with 2 operands:\n  1. TS (contact)\n  2. ((SysOn AND TP3) OR SBSink) - this is an _LD_OR with 2 operands:\n    a. (SysOn AND TP3) - _LD_AND with 2 operands: SysOn, TP3\n    b. SBSink (contact)\n\nSo the structure is:\n_LD_AND (2 operands)\n  _LD_CONTACT TS\n  _LD_OR (2 operands)\n    _LD_AND (2 operands)\n      _LD_CONTACT SysOn\n      _LD_CONTACT TP3\n    _LD_CONTACT SBSink\n\nNow let me construct the LD export following the format.\n\nLooking at the reference example, each contact is followed by _EXPRESSION and _POSITIV (or _NEGATIV). Each nested operator block also seems to be followed by _EXPRESSION and _POSITIV.\n\nLet me trace the reference example carefully:\n\nY := X AND NOT Z;\n\n```\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nX\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nZ\n_EXPRESSION\n_NEGATIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nSo the pattern seems to be:\n- _LD_ASSIGN\n- _LD_AND (or _LD_OR)\n- _LD_OPERATOR : N\n- For each operand:\n  - _LD_CONTACT, name, _EXPRESSION, _POSITIV/_NEGATIV\n  - OR nested _LD_AND/_LD_OR block\n- _EXPRESSION, _POSITIV (closing the AND/OR)\n- _EXPRESSION, _POSITIV (closing the LD_ASSIGN)\n\nFor my case:\n\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\n\n```\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n```\n\nWait, let me re-examine the reference more carefully. The reference has:\n- _LD_AND with 2 operands\n- After both contacts, there are two _EXPRESSION/_POSITIV pairs\n\nThe first _EXPRESSION/_POSITIV closes the _LD_AND block.\nThe second _EXPRESSION/_POSITIV closes the _LD_ASSIGN.\n\nSo for nested blocks, each block closing would add an _EXPRESSION/_POSITIV pair.\n\nLet me structure it:\n\n_LD_ASSIGN\n_LD_AND                    -- top-level AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR                     -- nested OR\n_LD_OPERATOR : 2\n_LD_AND                    -- nested AND inside OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_EXPRESSION                -- close inner AND\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION                -- close OR\n_POSITIV\n_EXPRESSION                -- close top-level AND\n_POSITIV\n_EXPRESSION                -- close _LD_ASSIGN\n_POSITIV\n\nThen the output section:\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\n\nThis is 1 network. Let me write the full output.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1722,
+    "completion_tokens": 1046,
+    "total_tokens": 2768,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 832,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

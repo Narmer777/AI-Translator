@@ -1,0 +1,6 @@
+LD SysOn
+AND (Alarm
+NOT
+OR ManualMode
+)
+ST Tmr.IN

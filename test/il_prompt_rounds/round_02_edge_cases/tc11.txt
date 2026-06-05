@@ -1,0 +1,1 @@
+A := X OR (Y AND (Z OR (P AND NOT Q)));

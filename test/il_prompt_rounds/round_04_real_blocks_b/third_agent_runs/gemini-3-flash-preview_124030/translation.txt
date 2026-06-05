@@ -1,0 +1,8 @@
+LDN _MxIsFn
+AND LS0
+ANDN MxIsBd
+AND MixTmr.Q
+S MxIsFn
+LD _MxIsFn
+ANDN LS0
+R MxIsFn

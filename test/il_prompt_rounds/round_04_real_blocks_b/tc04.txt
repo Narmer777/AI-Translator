@@ -1,0 +1,3 @@
+IF NOT _MxIsFn AND     LS0 AND NOT MxIsBd AND MixTmr.Q THEN MxIsFn:=1;
+ELSIF  _MxIsFn AND NOT LS0                             THEN MxIsFn:=0;
+END_IF;

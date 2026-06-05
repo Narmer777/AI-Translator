@@ -1,0 +1,5 @@
+LD Sensor.Ok
+AND (Tmr.Q
+ORN Tmr.IN
+)
+ST Ready

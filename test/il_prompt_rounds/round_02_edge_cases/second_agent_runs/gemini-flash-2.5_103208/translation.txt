@@ -1,0 +1,5 @@
+LD _A
+AND (0
+OR Stop
+)
+R A

@@ -1,0 +1,62 @@
+(* ------- Состояния/Ошибки/Лампы ------- *)
+IF NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS) THEN HtrErr:=1;
+ELSIF  _HtrErr AND PBStop                                  THEN HtrErr:=0;
+END_IF;
+
+IF NOT _MtrErr AND NOT MS AND (MtrTmr.Q OR _Mtr AND _MS) THEN MtrErr:=1;
+ELSIF  _MtrErr AND PBStop                                THEN MtrErr:=0;
+END_IF;
+
+(* ------- Состояния/Лампы ------- *)
+IF NOT _MxIsBd AND     LS0 AND _EVlv AND _C2InMx AND NOT _MxIsFn THEN MxIsBd:=1;
+ELSIF  _MxIsBd AND NOT LS0                                       THEN MxIsBd:=0;
+END_IF;
+
+IF NOT _MxIsFn AND     LS0 AND NOT MxIsBd AND MixTmr.Q THEN MxIsFn:=1;
+ELSIF  _MxIsFn AND NOT LS0                             THEN MxIsFn:=0;
+END_IF;
+
+IF NOT _C1InMx AND     LS0 AND _Vlv1 AND _TS1 THEN C1InMx:=1;
+ELSIF  _C1InMx AND NOT LS0                    THEN C1InMx:=0;
+END_IF;
+
+IF NOT _C2InMx AND     LS0 AND _Vlv2 AND _TS2 THEN C2InMx:=1;
+ELSIF  _C2InMx AND NOT LS0                    THEN C2InMx:=0;
+END_IF;
+
+(* ------- Вспомогательные переменные ------- *)
+Fin:= _Compl AND NOT _Vlv1 AND NOT LS0 OR HtrErr OR MtrErr OR MxIsBd OR SBEVlv OR PBStop
+                                                OR NOT TS1 AND NOT LS1 AND NOT MxIsFn
+                                                OR NOT TS2 AND NOT LS2 AND NOT MxIsFn;
+
+(* ------- Состояния/Лампы ------- *)
+IF NOT _SysOn AND PBStrt AND NOT Fin THEN SysOn:=1;
+ELSIF  _SysOn AND                Fin THEN SysOn:=0; 
+END_IF;
+
+IF NOT _Compl AND     SysOn AND PBCmpl THEN Compl:=1;
+ELSIF  _Compl AND NOT SysOn            THEN Compl:=0;
+END_IF;
+
+(* ------- Нагреватель/Лампа ------- *)
+IF NOT _Htr AND      SysOn AND NOT LTS  THEN Htr:=1;
+ELSIF  _Htr AND (NOT SysOn OR      UTS) THEN Htr:=0; 
+END_IF;
+
+(* ------- Приводы/Лампы ------- *)
+Vlv1:=SysOn AND TS1 AND NOT LS1               AND NOT C2InMx AND WTS;
+Vlv2:=SysOn AND TS2 AND     LS1   AND NOT LS2 AND NOT MxIsFn AND WTS;
+Mtr :=SysOn AND C1InMx AND C2InMx AND     LS2 AND NOT MxIsFn AND WTS;
+PVlv:=SysOn                                   AND     MxIsFn AND WTS;
+EVlv:=SBEVlv;
+
+(* ------- Раздел таймеров ------- *)
+HtrTmr.IN:= Htr AND NOT WTS;
+MtrTmr.IN:= Mtr AND NOT MS;
+MixTmr.IN:= Mtr AND     MS;
+
+(* ------- Псевдооператорный раздел ------- *)
+_MtrErr:=MtrErr; _HtrErr:=HtrErr; _C1InMx:=C1InMx; _C2InMx:=C2InMx;  _MxIsFn:=MxIsFn; _MxIsBd:=MxIsBd;
+_SysOn:=SysOn; _Compl:=Compl;
+_EVlv:=EVlv; _Vlv1:=Vlv1; _Vlv2:=Vlv2; _Htr:=Htr; _Mtr:=Mtr;
+_TS1:=TS1; _TS2:=TS2; _MS :=MS; _WTS:=WTS;

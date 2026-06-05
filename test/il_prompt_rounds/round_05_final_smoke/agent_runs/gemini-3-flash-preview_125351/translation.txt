@@ -1,0 +1,5 @@
+LD X
+ANDN (Y
+OR Z
+)
+ST A

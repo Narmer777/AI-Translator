@@ -1,0 +1,5 @@
+LDN X
+AND Y
+ORN Z
+AND W
+ST A

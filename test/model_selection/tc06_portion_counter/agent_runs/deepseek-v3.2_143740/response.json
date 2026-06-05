@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780486752-CwRGwx8pYpVwpPOFxh1o",
+  "object": "chat.completion",
+  "created": 1780486752,
+  "model": "deepseek/deepseek-v3.2-20251201",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LDN _TP3\nANDN _TP1\nAND _TP2\nANDN LS0\nAND _LS0\nAND _RVlv\nS TP3\n\nLD _TP3\nANDN TS\nR TP3\n\nLD TP1\nST _TP1\n\nLD TP2\nST _TP2\n\nLD TP3\nST _TP3\n\nLD Evpd\nST _Evpd",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1466,
+    "completion_tokens": 85,
+    "total_tokens": 1551,
+    "cost": 0.00040514,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 64,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00040514,
+      "upstream_inference_prompt_cost": 0.00037284,
+      "upstream_inference_completions_cost": 3.23e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

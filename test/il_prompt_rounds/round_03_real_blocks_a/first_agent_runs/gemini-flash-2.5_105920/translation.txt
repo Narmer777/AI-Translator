@@ -1,0 +1,7 @@
+LD LS0
+AND (_Evpd
+OR (_HtStg
+AND _WTS
+)
+)
+ST Evpd

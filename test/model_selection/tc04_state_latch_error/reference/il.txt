@@ -1,0 +1,11 @@
+LDN      _HtrErr
+ANDN     WTS
+AND      (HtrTmr.Q
+OR       (_Htr
+AND      _WTS
+)
+)
+S        HtrErr
+LD       _HtrErr
+AND      PBStop
+R        HtrErr

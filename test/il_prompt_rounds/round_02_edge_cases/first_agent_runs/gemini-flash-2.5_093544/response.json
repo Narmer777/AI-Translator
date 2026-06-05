@@ -1,0 +1,46 @@
+{
+  "id": "gen-1780641437-HqUwEGWL8T1DBVWpJUCM",
+  "object": "chat.completion",
+  "created": 1780641437,
+  "model": "google/gemini-2.5-flash",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "provisioned",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "LD X\nAND (Y\nOR Z\n)\nOR (P\nAND (Q\nOR R\n)\n)\nST A",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2283,
+    "completion_tokens": 29,
+    "total_tokens": 2312,
+    "cost": 0.0007574,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0007574,
+      "upstream_inference_prompt_cost": 0.0006849,
+      "upstream_inference_completions_cost": 7.25e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

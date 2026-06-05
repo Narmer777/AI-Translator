@@ -1,0 +1,3 @@
+IF NOT _MxIsBd AND     LS0 AND _EVlv AND _C2InMx AND NOT _MxIsFn THEN MxIsBd:=1;
+ELSIF  _MxIsBd AND NOT LS0                                       THEN MxIsBd:=0;
+END_IF;

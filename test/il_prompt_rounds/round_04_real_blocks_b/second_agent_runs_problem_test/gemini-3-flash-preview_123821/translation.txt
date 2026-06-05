@@ -1,0 +1,19 @@
+LD _Compl
+ANDN _Vlv1
+ANDN LS0
+OR HtrErr
+OR MtrErr
+OR MxIsBd
+OR SBEVlv
+OR PBStop
+OR (TS1
+NOT
+ANDN LS1
+ANDN MxIsFn
+)
+OR (TS2
+NOT
+ANDN LS2
+ANDN MxIsFn
+)
+ST Fin

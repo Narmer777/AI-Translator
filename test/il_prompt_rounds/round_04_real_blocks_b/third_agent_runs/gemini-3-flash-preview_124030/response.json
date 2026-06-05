@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780652524-gTy4XPba4mRtVCZjXeOj",
+  "object": "chat.completion",
+  "created": 1780652524,
+  "model": "google/gemini-3-flash-preview-20251217",
+  "provider": "Google",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "STOP",
+      "message": {
+        "role": "assistant",
+        "content": "LDN _MxIsFn\nAND LS0\nANDN MxIsBd\nAND MixTmr.Q\nS MxIsFn\nLD _MxIsFn\nANDN LS0\nR MxIsFn",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "AY89a18z+KzkekfxgFsZ3vX/1T64v5XRnuYA8RUlLMMAkU23ewa6V656CJG62lyu9K8=",
+            "format": "google-gemini-v1",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3121,
+    "completion_tokens": 44,
+    "total_tokens": 3165,
+    "cost": 0.0016925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0016925,
+      "upstream_inference_prompt_cost": 0.0015605,
+      "upstream_inference_completions_cost": 0.000132
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

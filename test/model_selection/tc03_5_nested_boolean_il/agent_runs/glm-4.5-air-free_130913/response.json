@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780481445-emGwE1JtUOlVwH1T6tCi",
+  "object": "chat.completion",
+  "created": 1780481445,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk",
+        "refusal": null,
+        "reasoning": "\nLet me translate the given ST program to IL according to the rules.\n\nThe ST program is:\n```\nModeOk:=Start AND (Ready OR (ValveOpen AND NOT Alarm));\n```\n\nThis is a simple assignment statement. Let's break it down:\n\n1. The left side is `ModeOk`\n2. The right side is `Start AND (Ready OR (ValveOpen AND NOT Alarm))`\n\nAccording to the translation rules:\n- For assignments, evaluate the expression and store the final accumulator value with `ST <identifier>`\n- Start with `LD <leftmost operand>` or `LDN <operand>` if the expression starts with `NOT`\n- For binary operations with parenthesized right sides, emit `AND (` or `OR (` and put the grouped expression inside that block\n- Inside parentheses, start with the first operand text, not `LD`\n- Close every opened parenthesis with a standalone `)` line\n\nLet's translate step by step:\n\n1. The leftmost operand is `Start`, so we start with `LD Start`\n2. Next is `AND` with a parenthesized expression `(Ready OR (ValveOpen AND NOT Alarm))`\n3. So we emit `AND (`\n4. Inside the parentheses, the first operand is `Ready`, so we start with `Ready`\n5. Next is `OR` with another parenthesized expression `(ValveOpen AND NOT Alarm)`\n6. So we emit `OR (`\n7. Inside this inner parentheses, the first operand is `ValveOpen`, so we start with `ValveOpen`\n8. Next is `AND` with `NOT Alarm`, which translates to `ANDN Alarm`\n9. Close the inner parentheses with `)`\n10. Close the outer parentheses with `)`\n11. Finally, store the result with `ST ModeOk`\n\nPutting it all together:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```\n\nThis follows all the rules:\n- One IL instruction per line\n- Uses LD, AND, OR, ANDN, ST as appropriate\n- Preserves the parenthesized structure from the source\n- Starts with LD for the leftmost operand\n- Inside parentheses, doesn't use LD\n- Closes every opened parenthesis with a standalone `)`\n- Uses ST for the final assignment\n\nLet me double-check this against the reference examples:\n\nExample 1:\nST:\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\nIL:\nLD TS\nAND (SysOn\nAND TP3\nOR SBSink\n)\nST Pmp\n\nMy translation follows the same pattern.\n\nExample 2:\nST:\nA := X AND NOT Y;\nIL:\nLD X\nANDN Y\nST A\n\nMy translation uses ANDN for NOT Alarm, which is correct.\n\nExample 3:\nST:\nOut := A AND (B OR (C AND D));\nIL:\nLD A\nAND (B\nOR (C\nAND D\n)\n)\nST Out\n\nMy translation follows the same nested parentheses pattern.\n\nSo the final IL translation is:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me translate the given ST program to IL according to the rules.\n\nThe ST program is:\n```\nModeOk:=Start AND (Ready OR (ValveOpen AND NOT Alarm));\n```\n\nThis is a simple assignment statement. Let's break it down:\n\n1. The left side is `ModeOk`\n2. The right side is `Start AND (Ready OR (ValveOpen AND NOT Alarm))`\n\nAccording to the translation rules:\n- For assignments, evaluate the expression and store the final accumulator value with `ST <identifier>`\n- Start with `LD <leftmost operand>` or `LDN <operand>` if the expression starts with `NOT`\n- For binary operations with parenthesized right sides, emit `AND (` or `OR (` and put the grouped expression inside that block\n- Inside parentheses, start with the first operand text, not `LD`\n- Close every opened parenthesis with a standalone `)` line\n\nLet's translate step by step:\n\n1. The leftmost operand is `Start`, so we start with `LD Start`\n2. Next is `AND` with a parenthesized expression `(Ready OR (ValveOpen AND NOT Alarm))`\n3. So we emit `AND (`\n4. Inside the parentheses, the first operand is `Ready`, so we start with `Ready`\n5. Next is `OR` with another parenthesized expression `(ValveOpen AND NOT Alarm)`\n6. So we emit `OR (`\n7. Inside this inner parentheses, the first operand is `ValveOpen`, so we start with `ValveOpen`\n8. Next is `AND` with `NOT Alarm`, which translates to `ANDN Alarm`\n9. Close the inner parentheses with `)`\n10. Close the outer parentheses with `)`\n11. Finally, store the result with `ST ModeOk`\n\nPutting it all together:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```\n\nThis follows all the rules:\n- One IL instruction per line\n- Uses LD, AND, OR, ANDN, ST as appropriate\n- Preserves the parenthesized structure from the source\n- Starts with LD for the leftmost operand\n- Inside parentheses, doesn't use LD\n- Closes every opened parenthesis with a standalone `)`\n- Uses ST for the final assignment\n\nLet me double-check this against the reference examples:\n\nExample 1:\nST:\nPmp := TS AND ((SysOn AND TP3) OR SBSink);\nIL:\nLD TS\nAND (SysOn\nAND TP3\nOR SBSink\n)\nST Pmp\n\nMy translation follows the same pattern.\n\nExample 2:\nST:\nA := X AND NOT Y;\nIL:\nLD X\nANDN Y\nST A\n\nMy translation uses ANDN for NOT Alarm, which is correct.\n\nExample 3:\nST:\nOut := A AND (B OR (C AND D));\nIL:\nLD A\nAND (B\nOR (C\nAND D\n)\n)\nST Out\n\nMy translation follows the same nested parentheses pattern.\n\nSo the final IL translation is:\n\n```\nLD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk\n```",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1342,
+    "completion_tokens": 688,
+    "total_tokens": 2030,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1341,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 663,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

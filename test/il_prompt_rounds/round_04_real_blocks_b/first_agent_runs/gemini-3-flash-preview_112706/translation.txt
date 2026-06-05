@@ -1,0 +1,11 @@
+LDN _MtrErr
+ANDN MS
+AND (MtrTmr.Q
+OR (_Mtr
+AND _MS
+)
+)
+S MtrErr
+LD _MtrErr
+AND PBStop
+R MtrErr

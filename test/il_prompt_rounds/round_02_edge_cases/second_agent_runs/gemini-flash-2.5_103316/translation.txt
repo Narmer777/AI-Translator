@@ -1,0 +1,13 @@
+LDN _Ready
+AND (Sensor.Ok
+AND (Tmr.Q
+OR ManualMode
+)
+)
+S Ready
+
+LD _Ready
+ANDN (Sensor.Ok
+OR ManualMode
+)
+R Ready

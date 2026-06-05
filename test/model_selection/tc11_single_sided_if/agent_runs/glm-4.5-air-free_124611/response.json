@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780566464-fgvSJzcgNhTtns35yalZ",
+  "object": "chat.completion",
+  "created": 1780566464,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_Compl\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBCmpl\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nCompl\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": "\nLet me analyze the source ST program:\n\n```\nIF NOT _Compl AND SysOn AND PBCmpl THEN Compl:=TRUE;\nEND_IF;\n```\n\nThis is a single IF statement with:\n- Condition: `NOT _Compl AND SysOn AND PBCmpl`\n- Assignment: `Compl:=TRUE`\n\nAccording to the translation rules:\n1. This IF statement will create one network\n2. Since the assignment is to TRUE, we'll use _OUTPUT, _POSITIV, _SET\n\nLet's break down the expression:\n- `NOT _Compl AND SysOn AND PBCmpl`\n- This is an AND expression with three operands: `NOT _Compl`, `SysOn`, and `PBCmpl`\n- The first operand is a NOT expression over `_Compl`\n\nIn LD, we'll need to represent this as:\n- `_LD_AND` with 3 operators\n- First operand: `_Compl` with `_NEGATIV` (because of NOT)\n- Second operand: `SysOn` with `_POSITIV`\n- Third operand: `PBCmpl` with `_POSITIV`\n\nNow, let's generate the complete LD export:\n\n1. Start with the required header\n2. Add _LD_BODY\n3. Add _NETWORKS : 1 (since we have one network)\n4. Add the network with the IF condition and assignment\n\nHere's the complete LD export:\n\n```\n(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_Compl\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBCmpl\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nCompl\nEND_PROGRAM\n```\n\nLet me double-check this against the requirements:\n\n1. The header is correct ✓\n2. We have _LD_BODY ✓\n3. We have _NETWORKS : 1 (correct count) ✓\n4. The network has the correct structure ✓\n5. We used _LD_AND with _LD_OPERATOR : 3 (correct for 3 operands) ✓\n6. We handled the NOT by using _NEGATIV for _Compl ✓\n7. We used _POSITIV for SysOn and PBCmpl ✓\n8. The output section is correct with _OUTPUT, _POSITIV, _SET for the TRUE assignment ✓\n9. The expression is properly closed with _EXPRESSION and _POSITIV before ENABLELIST ✓\n10. The output ends with END_PROGRAM ✓\n\nThis looks correct. Let me review once more to make sure I haven't missed anything:\n\n- The expression `NOT _Compl AND SysOn AND PBCmpl` is correctly represented as an AND with three operands\n- The NOT is applied to _Compl using _NEGATIV\n- The assignment to TRUE is correctly represented with _SET\n- All required blocks are present in the correct order\n\nYes, this should be the correct LD export for the given ST program.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me analyze the source ST program:\n\n```\nIF NOT _Compl AND SysOn AND PBCmpl THEN Compl:=TRUE;\nEND_IF;\n```\n\nThis is a single IF statement with:\n- Condition: `NOT _Compl AND SysOn AND PBCmpl`\n- Assignment: `Compl:=TRUE`\n\nAccording to the translation rules:\n1. This IF statement will create one network\n2. Since the assignment is to TRUE, we'll use _OUTPUT, _POSITIV, _SET\n\nLet's break down the expression:\n- `NOT _Compl AND SysOn AND PBCmpl`\n- This is an AND expression with three operands: `NOT _Compl`, `SysOn`, and `PBCmpl`\n- The first operand is a NOT expression over `_Compl`\n\nIn LD, we'll need to represent this as:\n- `_LD_AND` with 3 operators\n- First operand: `_Compl` with `_NEGATIV` (because of NOT)\n- Second operand: `SysOn` with `_POSITIV`\n- Third operand: `PBCmpl` with `_POSITIV`\n\nNow, let's generate the complete LD export:\n\n1. Start with the required header\n2. Add _LD_BODY\n3. Add _NETWORKS : 1 (since we have one network)\n4. Add the network with the IF condition and assignment\n\nHere's the complete LD export:\n\n```\n(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_Compl\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBCmpl\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nCompl\nEND_PROGRAM\n```\n\nLet me double-check this against the requirements:\n\n1. The header is correct ✓\n2. We have _LD_BODY ✓\n3. We have _NETWORKS : 1 (correct count) ✓\n4. The network has the correct structure ✓\n5. We used _LD_AND with _LD_OPERATOR : 3 (correct for 3 operands) ✓\n6. We handled the NOT by using _NEGATIV for _Compl ✓\n7. We used _POSITIV for SysOn and PBCmpl ✓\n8. The output section is correct with _OUTPUT, _POSITIV, _SET for the TRUE assignment ✓\n9. The expression is properly closed with _EXPRESSION and _POSITIV before ENABLELIST ✓\n10. The output ends with END_PROGRAM ✓\n\nThis looks correct. Let me review once more to make sure I haven't missed anything:\n\n- The expression `NOT _Compl AND SysOn AND PBCmpl` is correctly represented as an AND with three operands\n- The NOT is applied to _Compl using _NEGATIV\n- The assignment to TRUE is correctly represented with _SET\n- All required blocks are present in the correct order\n\nYes, this should be the correct LD export for the given ST program.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1720,
+    "completion_tokens": 887,
+    "total_tokens": 2607,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 7,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 709,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

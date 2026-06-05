@@ -1,0 +1,27 @@
+LD LS0
+AND (
+_Evpd
+OR (
+_HtStg
+AND _WTS
+)
+)
+ST Evpd
+LDN _PrdBn
+AND LS0
+AND _EVlv
+AND Evpd
+ANDN _PrdFn
+S PrdBn
+LD _PrdBn
+ANDN LS0
+R PrdBn
+LDN _PrdFn
+AND LS0
+ANDN LS1
+AND Evpd
+ANDN PrdBn
+S PrdFn
+LD _PrdFn
+ANDN LS0
+R PrdFn

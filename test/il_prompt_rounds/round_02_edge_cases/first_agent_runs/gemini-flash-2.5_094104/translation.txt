@@ -1,0 +1,5 @@
+LDN _A
+AND (TRUE
+AND X
+)
+S A

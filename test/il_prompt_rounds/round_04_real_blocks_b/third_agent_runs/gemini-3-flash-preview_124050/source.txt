@@ -1,0 +1,3 @@
+IF NOT _SysOn AND PBStrt AND NOT Fin THEN SysOn:=1;
+ELSIF  _SysOn AND                Fin THEN SysOn:=0; 
+END_IF;

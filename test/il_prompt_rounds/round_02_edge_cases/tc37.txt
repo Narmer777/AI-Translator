@@ -1,0 +1,3 @@
+IF NOT _Alarm AND (Tmr.Q AND NOT Sensor.Ok) THEN Alarm:=TRUE;
+ELSIF _Alarm AND (ResetPB OR Sensor.Ok) THEN Alarm:=FALSE;
+END_IF;

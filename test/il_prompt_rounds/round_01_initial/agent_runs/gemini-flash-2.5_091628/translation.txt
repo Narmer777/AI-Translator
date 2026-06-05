@@ -1,0 +1,10 @@
+LDN _Htr
+AND SysOn
+ANDN LTS
+S Htr
+LD _Htr
+AND (SysOn
+NOT
+OR UTS
+)
+R Htr

@@ -1,0 +1,7 @@
+LDN _A
+AND (X
+AND (Y
+ORN Z
+)
+)
+S A

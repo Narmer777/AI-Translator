@@ -1,0 +1,5 @@
+
+         
+
+         
+{"id":"gen-1780481406-2SEG47h3gqhXMAqejwXn","object":"chat.completion","created":1780481406,"model":"openai/gpt-4o-mini","provider":"OpenAI","system_fingerprint":"fp_4cd6971901","service_tier":null,"choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","message":{"role":"assistant","content":"LD Start\nAND (Ready\nOR (ValveOpen\nANDN Alarm\n)\n)\nST ModeOk","refusal":null,"reasoning":null}}],"usage":{"prompt_tokens":1348,"completion_tokens":21,"total_tokens":1369,"cost":0.0001188,"is_byok":false,"prompt_tokens_details":{"cached_tokens":1280,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.0001188,"upstream_inference_prompt_cost":0.0001062,"upstream_inference_completions_cost":0.0000126},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

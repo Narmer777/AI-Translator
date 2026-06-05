@@ -1,0 +1,214 @@
+LDN _HtrErr
+ANDN WTS
+AND (HtrTmr.Q
+OR (_Htr
+AND _WTS
+)
+)
+S HtrErr
+LD _HtrErr
+AND PBStop
+R HtrErr
+
+LD LS0
+AND (_Evpd
+OR (_HtStg
+AND _WTS
+)
+)
+ST Evpd
+
+LDN _PrdBn
+AND LS0
+AND _EVlv
+AND Evpd
+ANDN _PrdFn
+S PrdBn
+LD _PrdBn
+ANDN LS0
+R PrdBn
+
+LDN _PrdFn
+AND LS0
+ANDN LS1
+AND Evpd
+ANDN PrdBn
+S PrdFn
+LD _PrdFn
+ANDN LS0
+R PrdFn
+
+LDN _TP1
+ANDN _TP2
+ANDN _TP3
+ANDN LS0
+AND _LS0
+AND _RVlv
+S TP1
+LD _TP1
+AND (LS0
+NOT
+AND _LS0
+AND _RVlv
+ORN TS
+)
+R TP1
+
+LDN _TP2
+AND _TP1
+ANDN _TP3
+ANDN LS0
+AND _LS0
+AND _RVlv
+S TP2
+LD _TP2
+AND (LS0
+NOT
+AND _LS0
+AND _RVlv
+ORN TS
+)
+R TP2
+
+LDN _TP3
+ANDN _TP1
+AND _TP2
+ANDN LS0
+AND _LS0
+AND _RVlv
+S TP3
+LD _TP3
+ANDN TS
+R TP3
+
+LD _Compl
+ANDN _SVlv
+ANDN LS0
+ANDN TS
+OR (PBCmpl
+ANDN _SVlv
+ANDN LS0
+ANDN TS
+)
+OR HtrErr
+OR SBEVlv
+OR SBSink
+OR PrdBn
+OR PBStop
+ST Fin
+
+LDN _SysOn
+AND PBStrt
+ANDN Fin
+S SysOn
+LD _SysOn
+AND Fin
+R SysOn
+
+LDN _Compl
+AND SysOn
+AND PBCmpl
+S Compl
+LD _Compl
+ANDN SysOn
+R Compl
+
+LD TS
+AND (SysOn
+AND TP3
+OR SBSink
+)
+ST Pmp
+LD SysOn
+AND LS0
+ANDN PrdFn
+AND (LS2
+OR Evpd
+)
+ST HtStg
+
+LD SysOn
+ANDN Pmp
+ANDN WTS
+ANDN LS2
+ANDN PrdFn
+ANDN Evpd
+ANDN (_Compl
+ANDN LS0
+ANDN _SVlv
+AND (TP3
+ORN TS
+)
+)
+ST SbStg
+
+LD SysOn
+ANDN Pmp
+AND WTS
+AND (PrdFn
+ORN LS0
+)
+ST WnStg
+LD SysOn
+ANDN Pmp
+AND PrdFn
+ANDN TP3
+ANDN WTS
+ST RsStg
+
+LDN _Htr
+AND SysOn
+AND HtStg
+ANDN LTS
+S Htr
+LD _Htr
+AND (SysOn
+NOT
+OR UTS
+ORN HtStg
+)
+R Htr
+
+LD SBEVlv
+ST EVlv
+LD SbStg
+ST SVlv
+LD RsStg
+ST RVlv
+
+LD Htr
+ANDN WTS
+ST HtrTmr.IN
+
+LD Htr
+ST _Htr
+LD WTS
+ST _WTS
+LD HtrErr
+ST _HtrErr
+LD PrdBn
+ST _PrdBn
+LD EVlv
+ST _EVlv
+LD PrdFn
+ST _PrdFn
+LD HtStg
+ST _HtStg
+LD SVlv
+ST _SVlv
+LD Compl
+ST _Compl
+LD SysOn
+ST _SysOn
+LD RVlv
+ST _RVlv
+LD LS0
+ST _LS0
+LD TP1
+ST _TP1
+LD TP2
+ST _TP2
+LD TP3
+ST _TP3
+LD Evpd
+ST _Evpd

@@ -1,0 +1,13 @@
+LD TS
+AND (SysOn
+AND TP3
+OR SBSink
+)
+ST Pmp
+LD SysOn
+AND LS0
+ANDN PrdFn
+AND (LS2
+OR Evpd
+)
+ST HtStg

@@ -1,0 +1,5 @@
+LD Tmr.Q
+ANDN (Sensor.Ok
+OR ResetPB
+)
+ST Alarm

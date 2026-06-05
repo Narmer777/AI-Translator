@@ -1,0 +1,13 @@
+
+         
+
+         
+
+         
+
+         
+
+         
+
+         
+{"id":"gen-1780477426-0wTvmY21L5Z6k8FOGm5I","object":"chat.completion","created":1780477426,"model":"openai/gpt-4o-mini","provider":"Azure","system_fingerprint":"fp_4dcfea0a44","service_tier":null,"choices":[{"index":0,"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","message":{"role":"assistant","content":"(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 1\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nTS\n_EXPRESSION\n_POSITIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\nSysOn\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nTP3\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nSBSink\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NO_SET\nPmp\nEND_PROGRAM","refusal":null,"reasoning":null}}],"usage":{"prompt_tokens":1736,"completion_tokens":213,"total_tokens":1949,"cost":0.0003882,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0.0003882,"upstream_inference_prompt_cost":0.0002604,"upstream_inference_completions_cost":0.0001278},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}

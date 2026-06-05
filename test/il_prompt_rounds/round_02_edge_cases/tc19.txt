@@ -1,0 +1,1 @@
+A := (X AND Y) OR NOT (Z OR (P AND Q));

@@ -1,0 +1,6 @@
+LD X
+AND (Y
+NOT
+OR Z
+)
+ST A

@@ -1,0 +1,3 @@
+LD X
+ORN Y
+ST A

@@ -1,0 +1,9 @@
+LD SBEVlv
+ST EVlv
+LD SbStg
+ST SVlv
+LD RsStg
+ST RVlv
+LD Htr
+ANDN WTS
+ST HtrTmr.IN

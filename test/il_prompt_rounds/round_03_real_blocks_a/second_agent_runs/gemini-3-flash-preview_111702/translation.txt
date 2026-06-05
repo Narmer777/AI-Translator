@@ -1,0 +1,14 @@
+LD SysOn
+ANDN Pmp
+ANDN WTS
+ANDN LS2
+ANDN PrdFn
+ANDN Evpd
+ANDN (_Compl
+ANDN LS0
+ANDN _SVlv
+AND (TP3
+ORN TS
+)
+)
+ST SbStg

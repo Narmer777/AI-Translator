@@ -1,0 +1,4 @@
+EVlv:=SBEVlv;
+SVlv:=SbStg; 
+RVlv:=RsStg;
+HtrTmr.IN:= Htr AND NOT WTS;

@@ -1,0 +1,14 @@
+LDN _A
+AND (X
+ORN (Y
+OR Z
+)
+)
+S A
+LD _A
+AND (P
+ANDN (Q
+AND R
+)
+)
+R A

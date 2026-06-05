@@ -1,0 +1,9 @@
+LDN _PrdBn
+AND LS0
+AND _EVlv
+AND Evpd
+ANDN _PrdFn
+S PrdBn
+LD _PrdBn
+ANDN LS0
+R PrdBn

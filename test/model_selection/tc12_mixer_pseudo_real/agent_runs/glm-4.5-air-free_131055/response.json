@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780567948-pQg4XQ5kFWvDYyKLaDBB",
+  "object": "chat.completion",
+  "created": 1780567948,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "LD MtrErr\nST _MtrErr\nLD HtrErr\nST _HtrErr\nLD C1InMx\nST _C1InMx\nLD C2InMx\nST _C2InMx\nLD MxIsFn\nST _MxIsFn\nLD MxIsBd\nST _MxIsBd\nLD SysOn\nST _SysOn\nLD Compl\nST _Compl\nLD EVlv\nST _EVlv\nLD Vlv1\nST _Vlv1\nLD Vlv2\nST _Vlv2\nLD Htr\nST _Htr\nLD Mtr\nST _Mtr\nLD TS1\nST _TS1\nLD TS2\nST _TS2\nLD MS\nST _MS\nLD WTS\nST _WTS",
+        "refusal": null,
+        "reasoning": "\nLet me analyze the source program and translate it to IL according to the rules.\n\nThe source program consists of simple assignments of identifiers to other identifiers. Each assignment follows the pattern:\n`<identifier> := <identifier>;`\n\nAccording to the translation requirements:\n1. For assignments, evaluate the expression and store the final accumulator value with `ST <identifier>`\n2. For a direct assignment `Y := Expr;`, output exactly one expression followed by `ST Y`\n3. Start an assignment expression with `LD <leftmost operand>` or `LDN <operand>` if the expression starts with `NOT`\n4. Since these are simple assignments (just copying one identifier to another), we'll use `LD <source_identifier>` followed by `ST <target_identifier>`\n\nLet's translate each assignment:\n\n1. `_MtrErr := MtrErr;`\n   IL:\n   LD MtrErr\n   ST _MtrErr\n\n2. `_HtrErr := HtrErr;`\n   IL:\n   LD HtrErr\n   ST _HtrErr\n\n3. `_C1InMx := C1InMx;`\n   IL:\n   LD C1InMx\n   ST _C1InMx\n\n4. `_C2InMx := C2InMx;`\n   IL:\n   LD C2InMx\n   ST _C2InMx\n\n5. `_MxIsFn := MxIsFn;`\n   IL:\n   LD MxIsFn\n   ST _MxIsFn\n\n6. `_MxIsBd := MxIsBd;`\n   IL:\n   LD MxIsBd\n   ST _MxIsBd\n\n7. `_SysOn := SysOn;`\n   IL:\n   LD SysOn\n   ST _SysOn\n\n8. `_Compl := Compl;`\n   IL:\n   LD Compl\n   ST _Compl\n\n9. `_EVlv := EVlv;`\n   IL:\n   LD EVlv\n   ST _EVlv\n\n10. `_Vlv1 := Vlv1;`\n    IL:\n    LD Vlv1\n    ST _Vlv1\n\n11. `_Vlv2 := Vlv2;`\n    IL:\n    LD Vlv2\n    ST _Vlv2\n\n12. `_Htr := Htr;`\n    IL:\n    LD Htr\n    ST _Htr\n\n13. `_Mtr := Mtr;`\n    IL:\n    LD Mtr\n    ST _Mtr\n\n14. `_TS1 := TS1;`\n    IL:\n    LD TS1\n    ST _TS1\n\n15. `_TS2 := TS2;`\n    IL:\n    LD TS2\n    ST _TS2\n\n16. `_MS := MS;`\n    IL:\n    LD MS\n    ST _MS\n\n17. `_WTS := WTS;`\n    IL:\n    LD WTS\n    ST _WTS\n\nNow, let's put it all together in the final IL program:",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me analyze the source program and translate it to IL according to the rules.\n\nThe source program consists of simple assignments of identifiers to other identifiers. Each assignment follows the pattern:\n`<identifier> := <identifier>;`\n\nAccording to the translation requirements:\n1. For assignments, evaluate the expression and store the final accumulator value with `ST <identifier>`\n2. For a direct assignment `Y := Expr;`, output exactly one expression followed by `ST Y`\n3. Start an assignment expression with `LD <leftmost operand>` or `LDN <operand>` if the expression starts with `NOT`\n4. Since these are simple assignments (just copying one identifier to another), we'll use `LD <source_identifier>` followed by `ST <target_identifier>`\n\nLet's translate each assignment:\n\n1. `_MtrErr := MtrErr;`\n   IL:\n   LD MtrErr\n   ST _MtrErr\n\n2. `_HtrErr := HtrErr;`\n   IL:\n   LD HtrErr\n   ST _HtrErr\n\n3. `_C1InMx := C1InMx;`\n   IL:\n   LD C1InMx\n   ST _C1InMx\n\n4. `_C2InMx := C2InMx;`\n   IL:\n   LD C2InMx\n   ST _C2InMx\n\n5. `_MxIsFn := MxIsFn;`\n   IL:\n   LD MxIsFn\n   ST _MxIsFn\n\n6. `_MxIsBd := MxIsBd;`\n   IL:\n   LD MxIsBd\n   ST _MxIsBd\n\n7. `_SysOn := SysOn;`\n   IL:\n   LD SysOn\n   ST _SysOn\n\n8. `_Compl := Compl;`\n   IL:\n   LD Compl\n   ST _Compl\n\n9. `_EVlv := EVlv;`\n   IL:\n   LD EVlv\n   ST _EVlv\n\n10. `_Vlv1 := Vlv1;`\n    IL:\n    LD Vlv1\n    ST _Vlv1\n\n11. `_Vlv2 := Vlv2;`\n    IL:\n    LD Vlv2\n    ST _Vlv2\n\n12. `_Htr := Htr;`\n    IL:\n    LD Htr\n    ST _Htr\n\n13. `_Mtr := Mtr;`\n    IL:\n    LD Mtr\n    ST _Mtr\n\n14. `_TS1 := TS1;`\n    IL:\n    LD TS1\n    ST _TS1\n\n15. `_TS2 := TS2;`\n    IL:\n    LD TS2\n    ST _TS2\n\n16. `_MS := MS;`\n    IL:\n    LD MS\n    ST _MS\n\n17. `_WTS := WTS;`\n    IL:\n    LD WTS\n    ST _WTS\n\nNow, let's put it all together in the final IL program:",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1457,
+    "completion_tokens": 822,
+    "total_tokens": 2279,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1456,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 638,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+LD Start
+AND (Ready
+OR (ValveOpen
+ANDN Alarm
+)
+)
+ST ModeOk

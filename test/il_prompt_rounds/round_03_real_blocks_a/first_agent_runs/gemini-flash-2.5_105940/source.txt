@@ -1,0 +1,7 @@
+Fin:= _Compl AND NOT _SVlv AND NOT LS0 AND NOT TS
+   OR PBCmpl AND NOT _SVlv AND NOT LS0 AND NOT TS
+   OR HtrErr
+   OR SBEVlv
+   OR SBSink
+   OR PrdBn
+   OR PBStop;

@@ -1,0 +1,54 @@
+{
+  "id": "gen-1780483793-3xdrqvgzrzwulFtBBkwF",
+  "object": "chat.completion",
+  "created": 1780483793,
+  "model": "z-ai/glm-4.5-air:free",
+  "provider": "Z.AI",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 2\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nWTS\n_EXPRESSION\n_NEGATIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nHtrTmr.Q\n_EXPRESSION\n_POSITIV\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_Htr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_WTS\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nHtrErr\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBStop\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NEGATIV\n_SET\nHtrErr\nEND_PROGRAM",
+        "refusal": null,
+        "reasoning": "\nLet me analyze the source ST program and translate it to LD export format for CoDeSys 2.3.\n\nThe source program is:\n```\nIF NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS) THEN HtrErr:=TRUE;\nELSIF _HtrErr AND PBStop THEN HtrErr:=FALSE;\nEND_IF;\n```\n\nThis program has:\n1. One IF statement with a complex boolean expression\n2. One ELSIF statement with a simpler boolean expression\n3. Two assignments: one to TRUE and one to FALSE\n\nLet's break down the expressions:\n\nIF condition: `NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS)`\nThis can be broken down as:\n- NOT _HtrErr\n- NOT WTS\n- (HtrTmr.Q OR _Htr AND _WTS)\n\nThe third part is an OR expression with an AND nested inside:\n- HtrTmr.Q\n- _Htr AND _WTS\n\nELSIF condition: `_HtrErr AND PBStop`\nThis is a simple AND expression:\n- _HtrErr\n- PBStop\n\nNow, let's translate this to LD format:\n\n1. For the IF branch (assigning TRUE to HtrErr), we need a network with:\n   - _OUTPUT\n   - _POSITIV\n   - _SET\n   - Target: HtrErr\n\n2. For the ELSIF branch (assigning FALSE to HtrErr), we need a network with:\n   - _OUTPUT\n   - _NEGATIV\n   - _SET\n   - Target: HtrErr\n\nNow, let's build the LD networks:\n\nNetwork 1 (IF branch):\n```\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nWTS\n_EXPRESSION\n_NEGATIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nHtrTmr.Q\n_EXPRESSION\n_POSITIV\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_Htr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_WTS\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nHtrErr\n```\n\nNetwork 2 (ELSIF branch):\n```\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBStop\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NEGATIV\n_SET\nHtrErr\n```\n\nNow, let's put it all together with the required header:\n\n```\n(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 2\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nWTS\n_EXPRESSION\n_NEGATIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nHtrTmr.Q\n_EXPRESSION\n_POSITIV\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_Htr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_WTS\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nHtrErr\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBStop\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NEGATIV\n_SET\nHtrErr\nEND_PROGRAM\n```\n\nLet me double-check this against the requirements:\n\n1. The header is correct.\n2. We have _NETWORKS : 2, which matches the number of networks generated.\n3. Each network has the correct structure with _LD_ASSIGN, _LD_CONTACT/_LD_OR/_LD_AND blocks, _EXPRESSION, _POSITIV, ENABLELIST, _OUTPUTS, _OUTPUT, and the appropriate coil type (_SET).\n4. The IF branch uses _POSITIV and _SET (for TRUE assignment).\n5. The ELSIF branch uses _POSITIV and _NEGATIV and _SET (for FALSE assignment).\n6. Dotted identifiers like HtrTmr.Q are preserved.\n7. All expressions are properly structured with _LD_OPERATOR specifying the number of operands.\n\nI think this translation is correct and follows all the requirements.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "\nLet me analyze the source ST program and translate it to LD export format for CoDeSys 2.3.\n\nThe source program is:\n```\nIF NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS) THEN HtrErr:=TRUE;\nELSIF _HtrErr AND PBStop THEN HtrErr:=FALSE;\nEND_IF;\n```\n\nThis program has:\n1. One IF statement with a complex boolean expression\n2. One ELSIF statement with a simpler boolean expression\n3. Two assignments: one to TRUE and one to FALSE\n\nLet's break down the expressions:\n\nIF condition: `NOT _HtrErr AND NOT WTS AND (HtrTmr.Q OR _Htr AND _WTS)`\nThis can be broken down as:\n- NOT _HtrErr\n- NOT WTS\n- (HtrTmr.Q OR _Htr AND _WTS)\n\nThe third part is an OR expression with an AND nested inside:\n- HtrTmr.Q\n- _Htr AND _WTS\n\nELSIF condition: `_HtrErr AND PBStop`\nThis is a simple AND expression:\n- _HtrErr\n- PBStop\n\nNow, let's translate this to LD format:\n\n1. For the IF branch (assigning TRUE to HtrErr), we need a network with:\n   - _OUTPUT\n   - _POSITIV\n   - _SET\n   - Target: HtrErr\n\n2. For the ELSIF branch (assigning FALSE to HtrErr), we need a network with:\n   - _OUTPUT\n   - _NEGATIV\n   - _SET\n   - Target: HtrErr\n\nNow, let's build the LD networks:\n\nNetwork 1 (IF branch):\n```\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nWTS\n_EXPRESSION\n_NEGATIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nHtrTmr.Q\n_EXPRESSION\n_POSITIV\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_Htr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_WTS\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nHtrErr\n```\n\nNetwork 2 (ELSIF branch):\n```\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBStop\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NEGATIV\n_SET\nHtrErr\n```\n\nNow, let's put it all together with the required header:\n\n```\n(* @NESTEDCOMMENTS := 'Yes' *)\n(* @PATH := '' *)\n(* @OBJECTFLAGS := '0, 8' *)\n(* @SYMFILEFLAGS := '2048' *)\nPROGRAM PLC_LD_PRG_TR\nVAR\nEND_VAR\n(* @END_DECLARATION := '0' *)\n_LD_BODY\n_NETWORKS : 2\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 3\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_NEGATIV\n_LD_CONTACT\nWTS\n_EXPRESSION\n_NEGATIV\n_LD_OR\n_LD_OPERATOR : 2\n_LD_CONTACT\nHtrTmr.Q\n_EXPRESSION\n_POSITIV\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_Htr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\n_WTS\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_SET\nHtrErr\n_NETWORK\n_COMMENT\n''\n_END_COMMENT\n_LD_ASSIGN\n_LD_AND\n_LD_OPERATOR : 2\n_LD_CONTACT\n_HtrErr\n_EXPRESSION\n_POSITIV\n_LD_CONTACT\nPBStop\n_EXPRESSION\n_POSITIV\n_EXPRESSION\n_POSITIV\nENABLELIST : 0\nENABLELIST_END\n_OUTPUTS : 1\n_OUTPUT\n_POSITIV\n_NEGATIV\n_SET\nHtrErr\nEND_PROGRAM\n```\n\nLet me double-check this against the requirements:\n\n1. The header is correct.\n2. We have _NETWORKS : 2, which matches the number of networks generated.\n3. Each network has the correct structure with _LD_ASSIGN, _LD_CONTACT/_LD_OR/_LD_AND blocks, _EXPRESSION, _POSITIV, ENABLELIST, _OUTPUTS, _OUTPUT, and the appropriate coil type (_SET).\n4. The IF branch uses _POSITIV and _SET (for TRUE assignment).\n5. The ELSIF branch uses _POSITIV and _NEGATIV and _SET (for FALSE assignment).\n6. Dotted identifiers like HtrTmr.Q are preserved.\n7. All expressions are properly structured with _LD_OPERATOR specifying the number of operands.\n\nI think this translation is correct and follows all the requirements.",
+            "format": "unknown",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1751,
+    "completion_tokens": 1403,
+    "total_tokens": 3154,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 4,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1101,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
